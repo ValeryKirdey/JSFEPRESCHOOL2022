@@ -4,13 +4,6 @@ body {
 }
 
 @font-face {
-    font-family: 'Merriweather-Bold';
-    src: url(./fonts/Merriweather-Bold.ttf);
-    /* font-family: 'Merriweather-Regular', serif;
-    font-weight: 700 */
-}
-
-@font-face {
     font-family: 'Merriweather-Regular';
     src: url(./fonts/Merriweather-Regular.ttf);
     /* font-family: 'Merriweather-Regular', sans-serif;
@@ -103,7 +96,7 @@ header .container {
 } */
 
 .hero-content h1 {
-    font-family: 'Merriweather-Bold';
+    font-family: 'Merriweather', serif;
     font-size: 60px;
     line-height: 120px;
     color: #FFFFFF;
@@ -405,14 +398,14 @@ nav {
     box-sizing: border-box;
     height: 50px;
     width: -webkit-fill-available;
-    padding: 5px 226px 5px 20px;
+    padding: 25px 226px 25px 20px;
     margin: 10px 0;
 }
 
 #message {
     border: 2px solid #BDAE82;
     background: rgba(0, 0, 0, 0.5);
-    padding: 5px 187px 55px 20px;
+    padding: 5px 187px 100px 20px;
     margin: 10px 0;
     width: -webkit-fill-available;
 }
