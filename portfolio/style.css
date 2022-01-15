@@ -66,11 +66,12 @@ header .container {
     width: 50%;
   } */
 
-@media (max-width: 768px) {
+
+/* @media (max-width: 768px) {
     .section {
         width: 100%;
     }
-}
+} */
 
 .hero {
     background-image: url('./assets/img/bg.jpg');
@@ -439,14 +440,14 @@ nav {
 #message {
     border: 2px solid #BDAE82;
     background: rgba(0, 0, 0, 0.5);
-    padding: 2px 313px 84px 20px;
+    padding: 2px 0px 84px 20px;
     margin: 12px 0px 5px 20px;
     width: -webkit-fill-available;
 }
 
 #message:focus {
     margin: 12px 0px 5px 20px;
-    padding: 2px 313px 84px 20px;
+    padding: 2px 0px 84px 20px;
     font-family: 'Inter', sans-serif;
     color: #bdae82;
     font-size: 20px;
@@ -549,8 +550,9 @@ footer .container p a {
     filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
 }
 
-@media (max-width: 1440px) {
+
+/* @media (max-width: 1440px) {
     .skills-items {
         justify-content: space-around;
     }
-}
+} */
