@@ -20,6 +20,7 @@ body {
 
 .logo:hover {
     filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+    cursor: pointer;
 }
 
 .container {
@@ -139,6 +140,7 @@ header .container {
     font-size: 20px;
     line-height: 40px;
     margin: 2px;
+    cursor: pointer;
 }
 
 .switch-lng {
@@ -152,13 +154,15 @@ header .container {
     transition: color 0.5s;
 }
 
-.switch-lng a p {
+.switch-lng a {
     text-decoration: none;
+    margin: 0;
     color: #FFFFFF;
 }
 
-.switch-lng a p:hover {
+.switch-lng a:hover {
     color: #BDAE82;
+    margin: 0;
     text-decoration: none;
 }
 
@@ -297,6 +301,7 @@ nav {
     font-size: 20px;
     line-height: 40px;
     margin: 2px;
+    cursor: pointer;
 }
 
 .portfolio-items {
@@ -343,6 +348,7 @@ nav {
 
 .video-player .play:hover {
     filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+    cursor: pointer;
 }
 
 .price-items {
@@ -396,6 +402,7 @@ nav {
     font-size: 20px;
     line-height: 40px;
     padding: 8px 39px 7px;
+    cursor: pointer;
 }
 
 .price-items div {
@@ -494,6 +501,7 @@ nav {
     color: white;
     font-size: 20px;
     line-height: 40px;
+    cursor: pointer;
 }
 
 footer .container {
