@@ -16,18 +16,18 @@
     <header class="header">
         <div class="header-container">
             <div class="logo"></div>
-            <nav>
-                <ul>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#video">Video</a></li>
-                    <li><a href="#price">Price</a></li>
-                    <li><a href="#contacts">Contacts</a></li>
+            <nav class="nav">
+                <ul class="nav-ul">
+                    <li><a class="nav-ul-a" href="#skills">Skills</a></li>
+                    <li><a class="nav-ul-a" href="#portfolio">Portfolio</a></li>
+                    <li><a class="nav-ul-a" href="#video">Video</a></li>
+                    <li><a class="nav-ul-a" href="#price">Price</a></li>
+                    <li><a class="nav-ul-a" href="#contacts">Contacts</a></li>
                 </ul>
             </nav>
             <div class="switch-lng">
                 <a class="english" href="./">en</a>
-                <span>&nbsp;/&nbsp;</span>
+                <span>&nbsp;/</span>
                 <a class="russian" href="./">ru</a>
             </div>
             <div class="hamburger">
@@ -53,22 +53,22 @@
                 <div class="skills-items">
                     <div class="skill">
                         <!-- <img src="./assets/svg/camera1.svg" alt="camera"> -->
-                        <h3>Digital photography</h3>
+                        <p class="title">Digital photography</p>
                         <p>High-quality photos in the studio and on the nature</p>
                     </div>
                     <div class="skill">
                         <!-- <img src="./assets/svg/video1.svg" alt="video"> -->
-                        <h3>Video shooting</h3>
+                        <p class="title">Video shooting</p>
                         <p>Capture your moments so that they always stay with you</p>
                     </div>
                     <div class="skill">
                         <!-- <img src="./assets/svg/image1.svg" alt="image"> -->
-                        <h3>Retouch</h3>
+                        <p class="title">Retouch</p>
                         <p>I strive to make photography surpass reality</p>
                     </div>
                     <div class="skill">
                         <!-- <img src="./assets/svg/mic1.svg" alt="microphone"> -->
-                        <h3>Audio</h3>
+                        <p class="title">Audio</p>
                         <p>Professional sounds recording for video, advertising, portfolio</p>
                     </div>
                 </div>
@@ -99,10 +99,10 @@
                 <div class="video-player">
                     <img class="bg-desktop" src="./assets/img/video-player.jpg" alt="video">
                     <img class="bg-mobile" src="./assets/img/adaptive-vp.jpg" alt="video">
-                    <button class="play"><img src="./assets/svg/Play_hover.svg" alt="play"></button>
+                    <button class="play"></button>
                 </div>
             </section>
-            <section class="section" id="prices">
+            <section class="section" id="price">
                 <div class="section-title">
                     <h2 class="section-title-text">Price</h2>
                 </div>
@@ -110,7 +110,7 @@
                     <div class="price-item">
                         <h3 class="price-title">Standard</h3>
                         <div class="price">500 $</div>
-                        <div class="price-description">
+                        <div class="price-descr">
                             <span>One location</span>
                             <span>120 photos in color</span>
                             <span>12 photos in retouch</span>
@@ -122,7 +122,7 @@
                     <div class="price-item">
                         <h3 class="price-title">Premium</h3>
                         <div class="price">700 $</div>
-                        <div class="price-description">
+                        <div class="price-descr">
                             <span>One or two locations</span>
                             <span>200 photos in color</span>
                             <span>20 photos in retouch</span>
@@ -134,7 +134,7 @@
                     <div class="price-item">
                         <h3 class="price-title">Gold</h3>
                         <div class="price">1000 $</div>
-                        <div class="price-description">
+                        <div class="price-descr">
                             <span>Three locations or more</span>
                             <span>300 photos in color</span>
                             <span>50 photos in retouch</span>
@@ -149,7 +149,7 @@
         <div class="contacts-container">
             <section class="section" id="contacts">
                 <div class="contacts-block">
-                    <h2 class="contacts-title">Contact me</h2>
+                    <h2 class="title-text">Contact me</h2>
                     <div class="contacts-form">
                         <input type="email" placeholder="E-mail">
                         <input type="tel" placeholder="Phone">
