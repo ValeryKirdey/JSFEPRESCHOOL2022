@@ -1,25 +1,26 @@
-console.log('\n Вёрстка соответствует макету. Ширина экрана 768px +48 \n 2) Ни на одном из разрешений до 320 px включительно не появляется горизонтальная полоса прокрутки + 15 \n 3) На ширине экрана 768 рх и меньше реализовано адаптивное меню + 22 ');
+console.log('\n 1. Вёрстка соответствует макету. Ширина экрана 768px +48 \n 2. Ни на одном из разрешений до 320px включительно не появляется горизонтальная полоса прокрутки. Весь контент страницы при этом сохраняется: не обрезается и не удаляется. Фоновые изображения, добавляемые свойством background-image, к контенту не относятся, их можно обрезать +15 \n 3. На ширине экрана 768 рх и меньше реализовано адаптивное меню + 22 \n 4. Total points: 85');
 
-const hamburgerBtn = document.querySelector('.hamburger');
-const nav = document.querySelector('.nav');
-const navUl = document.querySelector('.nav-ul');
-const navLinks = document.querySelectorAll('.nav-ul-a');
-const bgBlack = document.createElement('div');
-document.body.append(bgBlack);
 
-hamburgerBtn.addEventListener('click', function() {
-    hamburgerBtn.classList.toggle('is-active');
+const hamburgerbtn = document.querySelector('.hamburger');
+const nav = document.querySelector('nav');
+const navTitle = document.querySelector('.nav-title');
+const navReference = document.querySelectorAll('.nav-ref');
+const bgShadow = document.createElement('div');
+document.body.append(bgShadow);
+
+hamburgerbtn.addEventListener('click', function() {
+    hamburgerbtn.classList.toggle('is-active');
     nav.classList.toggle('is-active');
-    navUl.classList.toggle('is-active');
-    bgBlack.classList.toggle('bg-black');
+    navTitle.classList.toggle('is-active');
+    bgShadow.classList.toggle('shadow');
 });
 
 function closeMenu() {
-    if (event.target.classList.contains('.nav-ul-a')) {
-        hamburgerBtn.classList.remove('is-active');
+    if (event.target.classList.contains('nav-ref')) {
+        hamburgerbtn.classList.remove('is-active');
         nav.classList.remove('is-active');
-        navUl.classList.remove('is-active');
-        bgBlack.classList.toggle('bg-black');
+        navTitle.classList.remove('is-active');
+        bgShadow.classList.remove('shadow');
     }
 }
 nav.addEventListener('click', closeMenu);
