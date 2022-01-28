@@ -1,6 +1,3 @@
-console.log('\n 1. Вёрстка соответствует макету. Ширина экрана 768px +48 \n 2. Ни на одном из разрешений до 320px включительно не появляется горизонтальная полоса прокрутки. Весь контент страницы при этом сохраняется: не обрезается и не удаляется. Фоновые изображения, добавляемые свойством background-image, к контенту не относятся, их можно обрезать +15 \n 3. На ширине экрана 768 рх и меньше реализовано адаптивное меню + 22 \n 4. Total points: 85');
-
-
 const hamburgerbtn = document.querySelector('.hamburger');
 const nav = document.querySelector('nav');
 const navTitle = document.querySelector('.nav-title');
