@@ -18,18 +18,21 @@
             <div class="logo"></div>
             <nav>
                 <ul class="nav-title">
-                    <li><a class="nav-ref" href="#skills">Skills</a></li>
-                    <li><a class="nav-ref" href="#portfolio">Portfolio</a></li>
-                    <li><a class="nav-ref" href="#video">Video</a></li>
-                    <li><a class="nav-ref" href="#price">Price</a></li>
-                    <li><a class="nav-ref" href="#contacts">Contacts</a></li>
+                    <li><a class="nav-ref" data-i18="skills" href="#skills">Skills</a></li>
+                    <li><a class="nav-ref" data-i18="portfolio" href="#portfolio">Portfolio</a></li>
+                    <li><a class="nav-ref" data-i18="video" href="#video">Video</a></li>
+                    <li><a class="nav-ref" data-i18="price" href="#price">Price</a></li>
+                    <li><a class="nav-ref" data-i18="contacts" href="#contacts">Contacts</a></li>
                 </ul>
             </nav>
-            <div class="switch-lng">
+            <div class="header__lang">
+                <span class="header__lang-item" data-i18="en">en</span><span>/</span><span class="header__lang-item" data-i18="ru">ru</span>
+            </div>
+            <!-- <div class="switch-lng">
                 <a class="english" href="./">en</a>
                 <span>&nbsp;/</span>
                 <a class="russian" href="./">ru</a>
-            </div>
+            </div> -->
             <div class="hamburger">
                 <span class="menu"></span>
                 <span class="menu"></span>
@@ -40,48 +43,48 @@
     <main class="main">
         <div class="hero-container">
             <section class="hero">
-                <h1 class="hero-title">Alexa Rise</h1>
-                <p class="hero-text">Save sincere emotions, romantic feelings and happy moments of life together with professional photographer Alexa Rise</p>
-                <button class="gold-btn">Hire me</button>
+                <h1 class="hero-title" data-i18="hero-title">Alexa Rise</h1>
+                <p class="hero-text" data-i18="hero-text">Save sincere emotions, romantic feelings and happy moments of life together with professional photographer Alexa Rise</p>
+                <button class="gold-btn" data-i18="hire">Hire me</button>
             </section>
         </div>
         <div class="container">
             <section class="section" id="skills">
                 <div class="section-title">
-                    <h2 class="section-title-text">Skills</h2>
+                    <h2 class="section-title-text" data-i18="skills">Skills</h2>
                 </div>
                 <div class="skills-items">
                     <div class="skill">
                         <!-- <img src="./assets/svg/camera1.svg" alt="camera"> -->
-                        <p class="title">Digital photography</p>
-                        <p>High-quality photos in the studio and on the nature</p>
+                        <p class="title" data-i18="skill-title-1">Digital photography</p>
+                        <p data-i18="skill-text-1">High-quality photos in the studio and on the nature</p>
                     </div>
                     <div class="skill">
                         <!-- <img src="./assets/svg/video1.svg" alt="video"> -->
-                        <p class="title">Video shooting</p>
-                        <p>Capture your moments so that they always stay with you</p>
+                        <p class="title" data-i18="skill-title-2">Video shooting</p>
+                        <p data-i18="skill-text-2">Capture your moments so that they always stay with you</p>
                     </div>
                     <div class="skill">
                         <!-- <img src="./assets/svg/image1.svg" alt="image"> -->
-                        <p class="title">Retouch</p>
-                        <p>I strive to make photography surpass reality</p>
+                        <p class="title" data-i18="skill-title-3">Retouch</p>
+                        <p data-i18="skill-text-3">I strive to make photography surpass reality</p>
                     </div>
                     <div class="skill">
                         <!-- <img src="./assets/svg/mic1.svg" alt="microphone"> -->
-                        <p class="title">Audio</p>
-                        <p>Professional sounds recording for video, advertising, portfolio</p>
+                        <p class="title" data-i18="skill-title-4">Audio</p>
+                        <p data-i18="skill-text-4">Professional sounds recording for video, advertising, portfolio</p>
                     </div>
                 </div>
             </section>
             <section class="section" id="portfolio">
                 <div class="section-title">
-                    <h2 class="section-title-text">Portfolio</h2>
+                    <h2 class="section-title-text" data-i18="portfolio">Portfolio</h2>
                 </div>
                 <div class="portfolio-btns">
-                    <button class="seasons-btn">Winter</button>
-                    <button class="seasons-btn">Center</button>
-                    <button class="seasons-btn">Summer</button>
-                    <button class="seasons-btn">Autumn</button>
+                    <button class="seasons-btn" data-season="winter" data-i18="winter">Winter</button>
+                    <button class="seasons-btn" data-season="spring" data-i18="spring">Spring</button>
+                    <button class="seasons-btn" data-season="summer" data-i18="summer">Summer</button>
+                    <button class="seasons-btn season-content_active" data-season="autumn" data-i18="autumn">Autumn</button>
                 </div>
                 <div class="portfolio-pic">
                     <img src="./assets/img/portfolio-img1.jpg" alt="photo">
