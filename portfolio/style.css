@@ -9,6 +9,16 @@
         box-sizing: inherit;
     }
     
+     :focus,
+     :active {
+        outline: none;
+    }
+    
+    a:focus,
+    a:active {
+        outline: none;
+    }
+    
     body {
         display: flex;
         flex-direction: column;
@@ -148,9 +158,56 @@
         }
     }
     
-    .switch-lng {
-        font-weight: 700;
+    .header__lang {
+        padding-right: 31px;
+        font-weight: bold;
+        min-width: 72px;
+        margin-right: -4px;
     }
+    
+    @media (max-width: 768px) {
+        .header__lang {
+            margin-left: auto;
+            padding-right: 25px;
+        }
+    }
+    
+    .header__lang span:not(:nth-child(2)) {
+        cursor: pointer;
+        -webkit-transition: 0.8s;
+        transition: 0.8s;
+    }
+    
+    .header__lang span:first-child {
+        padding-right: 9.5px;
+    }
+    
+    .header__lang span:first-child:hover {
+        color: #bdae82;
+    }
+    
+    .header__lang-item.header__lang_active {
+        color: #bdae82;
+    }
+    
+    .header__lang span:last-child {
+        padding-left: 8px;
+        letter-spacing: 1px;
+    }
+    
+    @media (max-width: 768px) {
+        .header__lang span:last-child {
+            padding-left: 19px;
+            letter-spacing: 0px;
+        }
+    }
+    
+    .header__lang span:last-child:hover {
+        color: #bdae82;
+    }
+    /* .switch-lng {
+        font-weight: 700;
+    } */
     /* .english {
         padding-right: 9px;
     }
@@ -158,8 +215,7 @@
     .russian {
         padding-left: 8px;
     } */
-    
-    .english,
+    /* .english,
     .russian,
     .language:visited {
         color: white;
@@ -171,6 +227,55 @@
     .english:hover,
     .russian:hover {
         color: #bdae82;
+    } */
+    
+    .light-theme {
+        background-color: #fff;
+        color: #000;
+    }
+    
+    .light-theme button {
+        color: #000;
+    }
+    
+    .light-theme .price-content__price h3 {
+        color: #000;
+    }
+    
+    .light-theme .portfolio-content__seasons button:hover {
+        background: #bdae82;
+        color: #fff;
+    }
+    
+    .light-theme__header h2 {
+        color: #000;
+    }
+    
+    .light-theme__header h2::before,
+    .light-theme__header h2::after {
+        background: #000;
+    }
+    
+    .header__change-theme {
+        width: 45px;
+        height: 45px;
+        background: url(assets/svg/sun.svg) no-repeat;
+        background-size: contain;
+        cursor: pointer;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+    }
+    
+    .change__theme_active {
+        background: url(assets/svg/moon.svg) no-repeat;
+        background-size: contain;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+    }
+    
+    .header__change-theme:hover {
+        -webkit-filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+        filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
     }
     
     .hamburger {
@@ -197,11 +302,21 @@
         transition: all 0.3s ease-in-out;
     }
     
+    .header__light-theme .hamburger.active .menu::before,
+    .header__light-theme .hamburger.active .menu::after {
+        background: #000;
+    }
+    
+    .header__light-theme .hamburger.active:hover .menu::before,
+    .header__light-theme .hamburger.active:hover .menu::after {
+        background: #bdae82;
+    }
+    
     @media (max-width: 768px) {
-        .switch-lng {
+        /* .switch-lng {
             margin-left: auto;
             padding-right: 20px;
-        }
+        } */
         .russian {
             padding-left: 15px;
         }
@@ -280,18 +395,69 @@
         }
     }
     
-    .gold-btn {
+    .button-theme {
         width: 220px;
         height: 55px;
-        border: 0;
-        background-color: #bdae82;
-        cursor: pointer;
-        font: inherit;
-        transition: 0.3s;
+        background: #bdae82;
+        -webkit-transition: 0.8s;
+        transition: 0.8s;
+        font-family: "Inter", Times, san-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 40px;
+        color: #000;
     }
     
-    .gold-btn:hover {
-        color: white;
+    .button-theme:hover {
+        color: #fff;
+    }
+    
+    .button-theme {
+        position: relative;
+        -webkit-box-shadow: 0 2px 15px #bdae82;
+        box-shadow: 0 2px 15px #bdae82;
+        overflow: hidden;
+    }
+    
+    .button-theme:focus {
+        outline: 0;
+    }
+    
+    .button-theme:active {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+        background-color: #b8ae8e;
+        -webkit-box-shadow: 0 5px 15px #0a0a08;
+        box-shadow: 0 5px 15px #0a0a08;
+    }
+    
+    .button-theme .circle {
+        position: absolute;
+        background-color: #fff;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        -webkit-transform: translate(-50%, -50%) scale(0);
+        transform: translate(-50%, -50%) scale(0);
+        -webkit-animation: scale 0.5s ease-out;
+        animation: scale 0.5s ease-out;
+    }
+    
+    @-webkit-keyframes scale {
+        to {
+            -webkit-transform: translate(-50%, -50%) scale(3);
+            transform: translate(-50%, -50%) scale(3);
+            opacity: 0;
+        }
+    }
+    
+    @keyframes scale {
+        to {
+            -webkit-transform: translate(-50%, -50%) scale(3);
+            transform: translate(-50%, -50%) scale(3);
+            opacity: 0;
+        }
     }
     
     .section-title {
@@ -405,16 +571,30 @@
         gap: 5px;
     }
     
+    .portfolio-btns .season-content_active {
+        background: #bdae82;
+        color: #000;
+    }
+    
+    .portfolio-btns .season-content_active:hover {
+        color: #fff;
+    }
+    
+    .portfolio-btns .season-content_active-light {
+        background: #000;
+        color: #fff;
+    }
+    
+    .portfolio-btns .season-content_active-light:hover {
+        color: #000;
+    }
+    
     .seasons-btn {
-        width: 220px;
-        height: 55px;
-        border: 2px solid #bdae82;
-        background-color: transparent;
-        cursor: pointer;
+        font-weight: normal;
         color: #bdae82;
-        font-family: inherit;
-        font-size: 20px;
-        transition: 0.3s;
+        background: transparent;
+        text-align: center;
+        border: 2px solid #bdae82;
     }
     
     .seasons-btn:hover {
