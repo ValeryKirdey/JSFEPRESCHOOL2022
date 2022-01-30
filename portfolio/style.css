@@ -206,11 +206,7 @@
         color: #bdae82;
     }
     
-    .light-theme .container {
-        background-color: #fff;
-    }
-    
-    .light-theme .body {
+    .light-theme .main {
         background-color: #fff;
         color: #000;
     }
