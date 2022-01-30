@@ -162,7 +162,7 @@ langItem.forEach(el => el.addEventListener('click', changeTranslate));
 //Change theme
 const changeTheme = () => {
     section.forEach((el, idx) => {
-        if (idx !== 0 && idx !== section.length - 1) {
+        if (idx !== 1 && idx !== section.length[3]) {
             el.classList.toggle('light-theme');
         }
     });
