@@ -205,44 +205,25 @@
     .header__lang span:last-child:hover {
         color: #bdae82;
     }
-    /* .switch-lng {
-        font-weight: 700;
-    } */
-    /* .english {
-        padding-right: 9px;
-    }
-    
-    .russian {
-        padding-left: 8px;
-    } */
-    /* .english,
-    .russian,
-    .language:visited {
-        color: white;
-        text-decoration: none;
-        line-height: 50px;
-        transition: 0.3s;
-    }
-    
-    .english:hover,
-    .russian:hover {
-        color: #bdae82;
-    } */
     
     .light-theme {
         background-color: #fff;
         color: #000;
     }
     
+    .light-theme .section-title {
+        background-image: linear-gradient(to top, #fff 39px, #000 39px, #000 41px, #fff 41px);
+    }
+    
     .light-theme button {
         color: #000;
     }
     
-    .light-theme .price-content__price h3 {
+    .light-theme .price-item h3 {
         color: #000;
     }
     
-    .light-theme .portfolio-content__seasons button:hover {
+    .light-theme .portfolio-btns button:hover {
         background: #bdae82;
         color: #fff;
     }

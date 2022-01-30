@@ -25,12 +25,12 @@
 //----------------------------------------------------
 
 import i18Obj from './translate.js';
-// const body = document.querySelector('.body');
-// const btnBurger = document.querySelector('.hamburger');
+const body = document.querySelector('.body');
+const btnBurger = document.querySelector('.hamburger');
 const header = document.querySelector('.header');
-// const menuBurger = document.querySelector('nav');
-// const listBurger = document.querySelector('.nav-title');
-// const overlay = document.querySelector('nav');
+const menuBurger = document.querySelector('nav');
+const listBurger = document.querySelector('.nav-title');
+const overlay = document.querySelector('nav');
 const btnPortfolioCont = document.querySelector('.portfolio-btns');
 const btnPortfolio = document.querySelectorAll('.seasons-btn');
 const imgPortfolio = document.querySelectorAll('.portfolio-content__img');
@@ -82,34 +82,34 @@ function setLocalStorageTheme() {
     localStorage.setItem('theme', theme);
 }
 
-// // Open burger-menu
-// btnBurger.addEventListener('click', () => {
-//     menuBurger.classList.toggle('nav__header_active');
-//     listBurger.classList.toggle('header__nav_active');
-//     body.classList.toggle('body__body_active');
-//     btnBurger.classList.toggle('active');
-// });
+// Open burger-menu
+btnBurger.addEventListener('click', () => {
+    menuBurger.classList.toggle('nav__header_active');
+    listBurger.classList.toggle('header__nav_active');
+    body.classList.toggle('body__body_active');
+    btnBurger.classList.toggle('active');
+});
 
-// // Close burger-menu 
-// const closeMenu = (e) => {
-//     if (e.target.classList.contains('nav-header__link')) {
-//         menuBurger.classList.remove('nav__header_active');
-//         listBurger.classList.remove('header__nav_active');
-//         body.classList.remove('body__body_active');
-//         btnBurger.classList.remove('active');
-//     }
-// };
-// listBurger.addEventListener('click', closeMenu);
+// Close burger-menu 
+const closeMenu = (e) => {
+    if (e.target.classList.contains('nav-ref')) {
+        menuBurger.classList.remove('nav__header_active');
+        listBurger.classList.remove('header__nav_active');
+        body.classList.remove('body__body_active');
+        btnBurger.classList.remove('active');
+    }
+};
+listBurger.addEventListener('click', closeMenu);
 
-// // Close burger-menu (click overlay)
-// overlay.addEventListener('click', e => {
-//     if (!e.target.closest('.nav-header__list')) {
-//         menuBurger.classList.remove('nav__header_active');
-//         listBurger.classList.remove('header__nav_active');
-//         body.classList.remove('body__body_active');
-//         btnBurger.classList.remove('active');
-//     }
-// });
+// Close burger-menu (click overlay)
+overlay.addEventListener('click', e => {
+    if (!e.target.closest('.nav-title')) {
+        menuBurger.classList.remove('nav__header_active');
+        listBurger.classList.remove('header__nav_active');
+        body.classList.remove('body__body_active');
+        btnBurger.classList.remove('active');
+    }
+});
 
 // Change seasons' photos in portfolio section
 const changePhoto = (e) => {
