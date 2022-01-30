@@ -210,6 +210,11 @@
         background-color: #fff;
     }
     
+    .light-theme .body {
+        background-color: #fff;
+        color: #000;
+    }
+    
     .light-theme {
         background-color: #fff;
         color: #000;

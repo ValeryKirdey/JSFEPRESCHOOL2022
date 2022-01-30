@@ -111,7 +111,7 @@ overlay.addEventListener('click', e => {
     }
 });
 
-// Change seasons' photos in portfolio section
+// Change seasons photos in portfolio section
 const changePhoto = (e) => {
     if (e.target.classList.contains('seasons-btn')) {
         btnPortfolio.forEach(el => el.classList.remove('season-content_active'));
