@@ -1,5 +1,5 @@
 import i18Obj from './translate.js';
-const body = document.querySelector('.body');
+const body = document.querySelector('.body').classList.contains('light-theme');
 const btnBurger = document.querySelector('.hamburger');
 const header = document.querySelector('.header');
 const menuBurger = document.querySelector('nav');
@@ -135,17 +135,14 @@ langItem.forEach(el => el.addEventListener('click', changeTranslate));
 
 //----------------------------------------------------
 
+
 const changeTheme = () => {
     section.forEach((el, idx) => {
         if (idx !== section.length[-1]) {
             el.classList.toggle('light-theme');
         }
     });
-    body.forEach((el, idx) => {
-        if (idx !== body) {
-            el.classList.toggle('light-theme');
-        }
-    });
+
     sectionHeader.forEach((el, idx) => {
         if (idx !== sectionHeader.length - 1) {
             el.classList.toggle('light-theme__header');
