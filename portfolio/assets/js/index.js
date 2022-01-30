@@ -1,29 +1,3 @@
-// const hamburgerbtn = document.querySelector('.hamburger');
-// const nav = document.querySelector('nav');
-// const navTitle = document.querySelector('.nav-title');
-// const navReference = document.querySelectorAll('.nav-ref');
-// const bgShadow = document.createElement('div');
-// document.body.append(bgShadow);
-
-// hamburgerbtn.addEventListener('click', function() {
-//     hamburgerbtn.classList.toggle('is-active');
-//     nav.classList.toggle('is-active');
-//     navTitle.classList.toggle('is-active');
-//     bgShadow.classList.toggle('shadow');
-// });
-
-// function closeMenu() {
-//     if (event.target.classList.contains('nav-ref')) {
-//         hamburgerbtn.classList.remove('is-active');
-//         nav.classList.remove('is-active');
-//         navTitle.classList.remove('is-active');
-//         bgShadow.classList.remove('shadow');
-//     }
-// }
-// nav.addEventListener('click', closeMenu);
-
-//----------------------------------------------------
-
 import i18Obj from './translate.js';
 const body = document.querySelector('.body');
 const btnBurger = document.querySelector('.hamburger');
@@ -160,6 +134,7 @@ const changeTranslate = (e) => {
 langItem.forEach(el => el.addEventListener('click', changeTranslate));
 
 //Change theme
+
 const changeTheme = () => {
     section.forEach((el, idx) => {
         if (idx !== 1 && idx !== section.length[-1]) {
@@ -188,39 +163,6 @@ const changeTheme = () => {
 };
 btnTheme.addEventListener('click', changeTheme);
 
-const variableElementsSelectors = '.body, .header-container, ' +
-    '.logo, .nav-link, .lng-en, .lng-ru, .theme-switcher, ' +
-    '.hamburger .line, .hire-button, .send-button, .section-title, ' +
-    '.transparent-button, .play-button, .price, .contacts-container, ' +
-    '.contacts-title, .contact-form, .message-form, .footer-link, ' +
-    '.social-media-item, .nav, .hero-container, .section-title-text, ' +
-    '.order-button';
-const variableElements = document.querySelectorAll(variableElementsSelectors);
-const switcher = document.querySelector('.theme-switcher');
-
-let isLight = false;
-
-export function initChangingTheme() {
-    switcher.addEventListener('click', changeTheme);
-    window.addEventListener('beforeunload', setLocalStorage);
-    window.addEventListener('load', getLocalStorage);
-}
-
-function changeTheme() {
-    variableElements.forEach(elem => elem.classList.toggle('light-theme'));
-    isLight = document.querySelector('.body').classList.contains('light-theme');
-}
-
-function setLocalStorage() {
-    (isLight) ? localStorage.setItem('theme', 'light'): localStorage.setItem('theme', 'dark');
-}
-
-function getLocalStorage() {
-    if (localStorage.getItem('theme') === 'light') {
-        changeTheme();
-    }
-}
-
 //Ripple effect
 btnAll.forEach(el => el.addEventListener('click', function(e) {
     const x = e.pageX
@@ -236,3 +178,30 @@ btnAll.forEach(el => el.addEventListener('click', function(e) {
     this.appendChild(circle)
     setTimeout(() => circle.remove(), 500)
 }))
+
+
+// const hamburgerbtn = document.querySelector('.hamburger');
+// const nav = document.querySelector('nav');
+// const navTitle = document.querySelector('.nav-title');
+// const navReference = document.querySelectorAll('.nav-ref');
+// const bgShadow = document.createElement('div');
+// document.body.append(bgShadow);
+
+// hamburgerbtn.addEventListener('click', function() {
+//     hamburgerbtn.classList.toggle('is-active');
+//     nav.classList.toggle('is-active');
+//     navTitle.classList.toggle('is-active');
+//     bgShadow.classList.toggle('shadow');
+// });
+
+// function closeMenu() {
+//     if (event.target.classList.contains('nav-ref')) {
+//         hamburgerbtn.classList.remove('is-active');
+//         nav.classList.remove('is-active');
+//         navTitle.classList.remove('is-active');
+//         bgShadow.classList.remove('shadow');
+//     }
+// }
+// nav.addEventListener('click', closeMenu);
+
+//----------------------------------------------------
