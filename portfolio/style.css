@@ -206,6 +206,10 @@
         color: #bdae82;
     }
     
+    .light-theme .container {
+        background-color: #fff;
+    }
+    
     .light-theme {
         background-color: #fff;
         color: #000;
@@ -213,6 +217,11 @@
     
     .light-theme .section-title {
         background-image: linear-gradient(to top, #fff 39px, #000 39px, #000 41px, #fff 41px);
+    }
+    
+    .light-theme .section-title-text {
+        background-color: #fff;
+        color: #000;
     }
     
     .light-theme button {
