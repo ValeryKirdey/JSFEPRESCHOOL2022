@@ -159,47 +159,35 @@ const changeTheme = () => {
     }
 };
 btnTheme.addEventListener('click', changeTheme);
+//----------------------------------------------------
+let elementsLight = ['html', '.body', '.container'];
+const arrOfClasses = document.querySelectorAll(elementsLight);
+const themeSwitcher = document.querySelector('.theme');
+const body = document.querySelector('body');
 
+function lightThemeSwitched() {
+    arrOfClasses.forEach(item => {
+        item.classList.toggle('light');
+    });
+    body.classList.contains('theme') ? theme = 'light' : theme = 'dark';
+    return theme;
+}
+themeSwitcher.addEventListener('click', (event) => { lightThemeSwitched(), event.target });
 //----------------------------------------------------
 btnAll.forEach(el => el.addEventListener('click', function(e) {
-        const x = e.pageX
-        const y = e.pageY
-        const buttonTop = e.target.offsetTop
-        const buttonLeft = e.target.offsetLeft
-        const xInside = x - buttonLeft
-        const yInside = y - buttonTop
-        const circle = document.createElement('span')
-        circle.classList.add('circle')
-        circle.style.top = yInside + 'px'
-        circle.style.left = xInside + 'px'
-        this.appendChild(circle)
-        setTimeout(() => circle.remove(), 500)
-    }))
-    //----------------------------------------------------
-
-// const hamburgerbtn = document.querySelector('.hamburger');
-// const nav = document.querySelector('nav');
-// const navTitle = document.querySelector('.nav-title');
-// const navReference = document.querySelectorAll('.nav-ref');
-// const bgShadow = document.createElement('div');
-// document.body.append(bgShadow);
-
-// hamburgerbtn.addEventListener('click', function() {
-//     hamburgerbtn.classList.toggle('is-active');
-//     nav.classList.toggle('is-active');
-//     navTitle.classList.toggle('is-active');
-//     bgShadow.classList.toggle('shadow');
-// });
-
-// function closeMenu() {
-//     if (event.target.classList.contains('nav-ref')) {
-//         hamburgerbtn.classList.remove('is-active');
-//         nav.classList.remove('is-active');
-//         navTitle.classList.remove('is-active');
-//         bgShadow.classList.remove('shadow');
-//     }
-// }
-// nav.addEventListener('click', closeMenu);
+    const x = e.pageX
+    const y = e.pageY
+    const buttonTop = e.target.offsetTop
+    const buttonLeft = e.target.offsetLeft
+    const xInside = x - buttonLeft
+    const yInside = y - buttonTop
+    const circle = document.createElement('span')
+    circle.classList.add('circle')
+    circle.style.top = yInside + 'px'
+    circle.style.left = xInside + 'px'
+    this.appendChild(circle)
+    setTimeout(() => circle.remove(), 500)
+}))
 
 //----------------------------------------------------
 
