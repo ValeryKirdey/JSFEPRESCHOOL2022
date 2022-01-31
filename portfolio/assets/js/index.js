@@ -159,20 +159,7 @@ const changeTheme = () => {
     }
 };
 btnTheme.addEventListener('click', changeTheme);
-//----------------------------------------------------
-let elementsLight = ['html', '.body', '.container'];
-const arrOfClasses = document.querySelectorAll(elementsLight);
-const themeSwitcher = document.querySelector('.theme');
-const body = document.querySelector('body');
 
-function lightThemeSwitched() {
-    arrOfClasses.forEach(item => {
-        item.classList.toggle('light');
-    });
-    body.classList.contains('theme') ? theme = 'light' : theme = 'dark';
-    return theme;
-}
-themeSwitcher.addEventListener('click', (event) => { lightThemeSwitched(), event.target });
 //----------------------------------------------------
 btnAll.forEach(el => el.addEventListener('click', function(e) {
     const x = e.pageX
