@@ -1,3 +1,157 @@
 * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: white;
+    font-size: 20px;
+    line-height: 2;
+    min-width: 720px;
+    font-family: 'Inter', sans-serif;
+    background-color: black;
+}
+
+.header {
+    width: 100%;
     margin: 0 auto;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1590px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    background: url("./assets/svg/logo.svg") no-repeat;
+    background-size: contain;
+    transition: 0.3;
+}
+
+.logo:hover {
+    filter: invert(20%) sepia(3%) saturate(7500%) hue-rotate(176deg) brightness(99%) contrast(103%);
+    -webkit-filter: invert(20%) sepia(3%) saturate(7500%) hue-rotate(176deg) brightness(99%) contrast(103%);
+}
+
+.header-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.nav {
+    margin-left: auto;
+}
+
+.nav-item {
+    margin: auto 15px;
+    cursor: pointer;
+    transition: 0.3;
+    -webkit-transition: 0.3;
+    -moz-transition: 0.3;
+    -ms-transition: 0.3;
+    -o-transition: 0.3;
+}
+
+.nav-item:hover {
+    filter: invert(20%) sepia(3%) saturate(7500%) hue-rotate(176deg) brightness(99%) contrast(103%);
+    -webkit-filter: invert(20%) sepia(3%) saturate(7500%) hue-rotate(176deg) brightness(99%) contrast(103%);
+}
+
+.nav-item.active {
+    filter: invert(20%) sepia(3%) saturate(7500%) hue-rotate(176deg) brightness(99%) contrast(103%);
+    -webkit-filter: invert(20%) sepia(3%) saturate(7500%) hue-rotate(176deg) brightness(99%) contrast(103%);
+}
+
+.nav-item.active:hover {
+    filter: none;
+    -webkit-filter: none;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 100%; */
+    height: calc(100vh - 120px);
+    background-image: url("./assets/img/night.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.play {
+    width: 160px;
+    height: 160px;
+    background-image: url("./assets/svg/play.svg");
+    background-size: contain;
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    transition: .3s;
+}
+
+.play:focus {
+    border: 0;
+}
+
+.play:hover {
+    filter: brightness(.85);
+    -webkit-filter: brightness(.85);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1590px;
+}
+
+.footer-data {
+    display: flex;
+    align-items: center;
+}
+
+.footer-data p {
+    margin-right: 15px;
+}
+
+.github {
+    color: white;
+    text-decoration: none;
+}
+
+.github:hover {
+    filter: invert(20%) sepia(3%) saturate(7500%) hue-rotate(176deg) brightness(99%) contrast(103%);
+}
+
+.rss-logo {
+    width: 135px;
+    height: 50px;
+    background-image: url("./assets/svg/rss.svg");
+    background-size: contain;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.rss-logo:hover {
+    filter: invert(20%) sepia(3%) saturate(7500%) hue-rotate(176deg) brightness(99%) contrast(103%);
 }
