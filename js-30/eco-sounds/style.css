@@ -32,14 +32,14 @@ body {
 .logo {
     width: 50px;
     height: 50px;
-    background: url("./assets/svg/logo.svg") no-repeat;
+    background: url("./assets/svg/fire.svg") no-repeat;
     background-size: contain;
     transition: 0.3;
 }
 
 .logo:hover {
-    filter: invert(20%) sepia(3%) saturate(7500%) hue-rotate(176deg) brightness(99%) contrast(103%);
-    -webkit-filter: invert(20%) sepia(3%) saturate(7500%) hue-rotate(176deg) brightness(99%) contrast(103%);
+    filter: brightness(0) saturate(100%) invert(52%) sepia(99%) saturate(837%) hue-rotate(341deg) brightness(90%) contrast(95%);
+    -webkit-filter: brightness(0) saturate(100%) invert(52%) sepia(99%) saturate(837%) hue-rotate(341deg) brightness(90%) contrast(95%);
 }
 
 .header-container {
@@ -71,13 +71,11 @@ body {
 }
 
 .nav-item:hover {
-    filter: invert(20%) sepia(3%) saturate(7500%) hue-rotate(176deg) brightness(99%) contrast(103%);
-    -webkit-filter: invert(20%) sepia(3%) saturate(7500%) hue-rotate(176deg) brightness(99%) contrast(103%);
+    filter: brightness(0) saturate(100%) invert(52%) sepia(99%) saturate(837%) hue-rotate(341deg) brightness(90%) contrast(95%);
 }
 
 .nav-item.active {
-    filter: invert(20%) sepia(3%) saturate(7500%) hue-rotate(176deg) brightness(99%) contrast(103%);
-    -webkit-filter: invert(20%) sepia(3%) saturate(7500%) hue-rotate(176deg) brightness(99%) contrast(103%);
+    filter: brightness(0) saturate(100%) invert(52%) sepia(99%) saturate(837%) hue-rotate(341deg) brightness(90%) contrast(95%);
 }
 
 .nav-item.active:hover {
