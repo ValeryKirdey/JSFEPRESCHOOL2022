@@ -1,0 +1,178 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: white;
+    font-size: 20px;
+    line-height: 2;
+    min-width: 720px;
+    font-family: 'Inter', sans-serif;
+    background-color: black;
+}
+
+.header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    max-width: 1590px;
+}
+
+@media(max-width: 880px) {
+    .container {
+        width: 100%;
+    }
+    .footer-container {
+        width: 100%;
+    }
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    background: url("./assets/svg/fire.svg") no-repeat;
+    background-size: contain;
+    transition: 0.3s;
+}
+
+.logo:hover {
+    filter: brightness(0) saturate(100%) invert(52%) sepia(99%) saturate(837%) hue-rotate(341deg) brightness(90%) contrast(95%);
+}
+
+.header-container {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 95px;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.nav {
+    margin-left: auto;
+}
+
+.nav-item {
+    color: white;
+    margin: auto 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 20px;
+    line-height: 50px;
+}
+
+.nav-item:hover {
+    filter: brightness(0) saturate(100%) invert(52%) sepia(99%) saturate(837%) hue-rotate(341deg) brightness(90%) contrast(95%);
+}
+
+.nav-item.active {
+    filter: brightness(0) saturate(100%) invert(52%) sepia(99%) saturate(837%) hue-rotate(341deg) brightness(90%) contrast(95%);
+}
+
+.nav-item.active:hover {
+    filter: none;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 100%; */
+    height: calc(100vh - 120px);
+    background-image: url("./assets/img/night.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.play {
+    width: 160px;
+    height: 160px;
+    background-image: url("./assets/svg/play.svg");
+    background-size: contain;
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    transition: .3s;
+}
+
+.play:focus {
+    border: 0;
+}
+
+.play:hover {
+    filter: brightness(.85);
+}
+
+.play.pause {
+    background-image: url("./assets/svg/pause.svg");
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    padding: 5px auto;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1590px;
+    width: 80%;
+    margin: 25px 0;
+}
+
+@media(max-width: 880px) {
+    .footer-container {
+        width: 100%;
+    }
+}
+
+.footer-data {
+    display: flex;
+    align-items: center;
+}
+
+.footer-data p {
+    margin-right: 15px;
+}
+
+.github {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.github:hover {
+    filter: brightness(0) saturate(100%) invert(52%) sepia(99%) saturate(837%) hue-rotate(341deg) brightness(90%) contrast(95%);
+}
+
+.rss-logo {
+    width: 135px;
+    height: 50px;
+    background-image: url("./assets/svg/rss.svg");
+    background-size: contain;
+    transition: 0.3s;
+}
+
+.rss-logo:hover {
+    filter: brightness(0) saturate(100%) invert(52%) sepia(99%) saturate(837%) hue-rotate(341deg) brightness(90%) contrast(95%);
+}
