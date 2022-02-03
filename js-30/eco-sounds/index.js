@@ -1,29 +1,34 @@
-// const audio = document.querySelector('audio');
-
-// function playAudio() {
-//     audio.currentTime = 0;
-//     audio.play();
-// }
-
-// function pauseAudio() {
-//     audio.pause();
-// }
-
-const audio = document.querySelector('audio');
-const playBtn = document.querySelector('.play');
-// const pauseBtn = document.querySelector('.pause-btn');
+const playPauseBtn = document.querySelector('.play');
+let isPlay = false;
+const audio = new Audio();
 
 function playAudio() {
+    audio.src = './assets/audio/night.mp3';
     audio.currentTime = 0;
-    audio.play();
+    if (!isPlay) {
+
+        audio.play()
+        isPlay = true
+    } else { isPlay }
+    console.log(isPlay)
 }
 
-// function pauseAudio() {
-//     audio.pause();
+playPauseBtn.addEventListener('click', playAudio);
+
+
+//---------------------------------------------------
+
+// let play = 'play';
+// const themeSwitcher = document.querySelector('.pause');
+// themeSwitcher.addEventListener('click', switchTheme);
+
+// function switchTheme() {
+//     themeSwitcher.classList.toggle('.pause');
+//     play = themeSwitcher.classList.contains('.pause') ? 'play' : 'pause';
+//     toggleLight();
 // }
 
-playBtn.addEventListener('click', playAudio);
-// pauseBtn.addEventListener('click', pauseAudio);
+
 
 //---------------------------------------------------
 const navList = document.querySelector('.nav-list');

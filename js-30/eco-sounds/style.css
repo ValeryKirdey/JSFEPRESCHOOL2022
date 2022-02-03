@@ -122,6 +122,10 @@ body {
     filter: brightness(.85);
 }
 
+.play.pause {
+    background-image: url("./assets/svg/pause.svg");
+}
+
 .footer {
     display: flex;
     justify-content: center;
