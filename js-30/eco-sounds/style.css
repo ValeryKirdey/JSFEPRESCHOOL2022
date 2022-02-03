@@ -18,15 +18,26 @@ body {
 }
 
 .header {
-    width: 100%;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 80%;
     max-width: 1590px;
+}
+
+@media(max-width: 880px) {
+    .container {
+        width: 100%;
+    }
+    .footer-container {
+        width: 100%;
+    }
 }
 
 .logo {
@@ -34,12 +45,11 @@ body {
     height: 50px;
     background: url("./assets/svg/fire.svg") no-repeat;
     background-size: contain;
-    transition: 0.3;
+    transition: 0.3s;
 }
 
 .logo:hover {
     filter: brightness(0) saturate(100%) invert(52%) sepia(99%) saturate(837%) hue-rotate(341deg) brightness(90%) contrast(95%);
-    -webkit-filter: brightness(0) saturate(100%) invert(52%) sepia(99%) saturate(837%) hue-rotate(341deg) brightness(90%) contrast(95%);
 }
 
 .header-container {
@@ -47,7 +57,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 15px;
+    padding: 10px 0;
 }
 
 .nav-list {
@@ -61,13 +71,12 @@ body {
 }
 
 .nav-item {
+    color: white;
     margin: auto 15px;
     cursor: pointer;
-    transition: 0.3;
-    -webkit-transition: 0.3;
-    -moz-transition: 0.3;
-    -ms-transition: 0.3;
-    -o-transition: 0.3;
+    transition: 0.3s;
+    font-size: 20px;
+    line-height: 50px;
 }
 
 .nav-item:hover {
@@ -80,7 +89,6 @@ body {
 
 .nav-item.active:hover {
     filter: none;
-    -webkit-filter: none;
 }
 
 .main {
@@ -111,13 +119,25 @@ body {
 
 .play:hover {
     filter: brightness(.85);
-    -webkit-filter: brightness(.85);
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    padding: 5px auto;
 }
 
 .footer-container {
     display: flex;
     justify-content: space-between;
     max-width: 1590px;
+    width: 80%;
+}
+
+@media(max-width: 880px) {
+    .footer-container {
+        width: 100%;
+    }
 }
 
 .footer-data {
@@ -132,10 +152,11 @@ body {
 .github {
     color: white;
     text-decoration: none;
+    transition: 0.3s;
 }
 
 .github:hover {
-    filter: invert(20%) sepia(3%) saturate(7500%) hue-rotate(176deg) brightness(99%) contrast(103%);
+    filter: brightness(0) saturate(100%) invert(52%) sepia(99%) saturate(837%) hue-rotate(341deg) brightness(90%) contrast(95%);
 }
 
 .rss-logo {
@@ -144,12 +165,8 @@ body {
     background-image: url("./assets/svg/rss.svg");
     background-size: contain;
     transition: 0.3s;
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -ms-transition: 0.3s;
-    -o-transition: 0.3s;
 }
 
 .rss-logo:hover {
-    filter: invert(20%) sepia(3%) saturate(7500%) hue-rotate(176deg) brightness(99%) contrast(103%);
+    filter: brightness(0) saturate(100%) invert(52%) sepia(99%) saturate(837%) hue-rotate(341deg) brightness(90%) contrast(95%);
 }
