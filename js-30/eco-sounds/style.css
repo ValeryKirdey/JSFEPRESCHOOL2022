@@ -18,6 +18,7 @@ body {
 }
 
 .header {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,11 +54,11 @@ body {
 }
 
 .header-container {
-    position: relative;
+    position: absolute;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
+    margin-top: 95px;
 }
 
 .nav-list {
@@ -97,7 +98,7 @@ body {
     align-items: center;
     /* width: 100%; */
     height: calc(100vh - 120px);
-    background-image: url("./assets/img/night.jpeg");
+    background-image: url("./assets/img/night.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -132,6 +133,7 @@ body {
     justify-content: space-between;
     max-width: 1590px;
     width: 80%;
+    margin: 25px 0;
 }
 
 @media(max-width: 880px) {
