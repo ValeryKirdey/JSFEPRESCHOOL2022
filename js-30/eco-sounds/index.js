@@ -11,9 +11,30 @@ let currentItem = navItems[0]
 let showInfo = false;
 
 
-setBackground('forest')
+setBackground('night')
 playContainer.addEventListener('click', playButtonHandler);
 //---------------------Play/Pause Audio-----------------------------------
+
+document.addEventListener('keydown', (e) => {
+    if (e.code === 'Space') playButtonHandler()
+    if (e.code === 'ArrowLeft' || e.code === 'ArrowRight') changeTabByKey(e.code)
+})
+
+logo.addEventListener('click', (e) => { setBackground('night') })
+
+for (let navItem of navItems) {
+    navItem.addEventListener('click', (e) => setActive(e.target.parentNode))
+}
+
+function changeTabByKey(key) {
+    let number = Number(currentItem.firstChild.dataset.order)
+    if (key == 'ArrowRight') number = (number < navItems.length - 1) ? number + 1 : 0
+    if (key == 'ArrowLeft') number = (number === 0) ? 7 : number - 1
+    setActive(navItems[number])
+}
+
+//---------------------Play/Pause Audio-----------------------------------
+
 
 async function playAudio() {
     if (!init) {
@@ -45,12 +66,12 @@ async function playAudio() {
 
 function playButtonHandler() {
     isPlay = !isPlay
-    const target = document.querySelector('.play') 
-    target.focus()  
+    const target = document.querySelector('.play')
+    target.focus()
     if (target.classList.contains('play-show') || target.classList.contains('play-hide')) {
         target.classList.remove('play-show')
         target.classList.remove('play-hide')
-    }    
+    }
     animate(target, 'play-hide', true)
         .then(() => {
             playContainer.classList.remove(isPlay ? 'play' : 'pause')
@@ -58,35 +79,35 @@ function playButtonHandler() {
             playContainer.classList.add(isPlay ? 'pause' : 'play')
 
         })
-    playAudio()        
+    playAudio()
 }
 //---------------------Background-----------------------------------
 
 function setActive(targetItem) {
-    
+
     if (targetItem.classList.contains('show') || targetItem.classList.contains('hide')) {
         targetItem.classList.remove('show')
         targetItem.classList.remove('hide')
     }
-    
+
     const prevItem = document.querySelector('.nav-item.active')
-        
+
     const prevOrder = prevItem.firstChild.dataset.order
-    const currentOrder = targetItem.firstChild.dataset.order    
+    const currentOrder = targetItem.firstChild.dataset.order
     const mainContainer = document.querySelector('.main')
 
     let directionPrev = (prevOrder < currentOrder) ? 'align-end' : 'align-start'
     let directionCurrent = (prevOrder < currentOrder) ? 'align-start' : 'align-end'
-    
+
     prevItem.classList.add(directionPrev)
     animate(prevItem, 'deactive', true).then(() => prevItem.classList.remove(directionPrev))
     navItems.forEach(e => e.classList.remove('active'))
     animate(mainContainer, 'hide', true)
-        .then(() => setBackground(targetItem.firstChild.dataset.bird))
+        .then(() => setBackground(targetItem.firstChild.dataset.item))
         .then(() => animate(mainContainer, 'show', true))
 
     targetItem.classList.add(directionCurrent)
-    
+
     animate(targetItem, 'active', false).then(() => targetItem.classList.remove(directionCurrent))
     currentItem = targetItem
     playAudio()
@@ -100,4 +121,3 @@ function setBackground(name) {
         resolve()
     })
 }
-

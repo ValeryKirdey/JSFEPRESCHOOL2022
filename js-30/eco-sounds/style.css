@@ -63,13 +63,15 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-top: 95px;
+    z-index: 20;
 }
 
-.nav-list {
+.nav-items {
     display: flex;
     justify-content: center;
     list-style-type: none;
 }
+
 .nav-link {
     color: white;
     text-decoration: none;
@@ -131,6 +133,7 @@ body {
 } */
 
 .main {
+    position: relative;
     display: flex;
     flex-direction: column;
     height: calc(100vh - 120px);
@@ -141,6 +144,11 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     overflow-x: hidden;
+    /* background-image: url("./assets/img/swamp.jpg") */
+}
+
+.bg-night {
+    background-image: url("./assets/img/night.jpg")
 }
 
 .bg-forest {
@@ -171,26 +179,43 @@ body {
     background-image: url("./assets/img/winter.jpg")
 }
 
+.pause {
+    background-image: url("./assets/svg/pause.svg");
+}
+
 .play {
     width: 160px;
     height: 160px;
     background-image: url("./assets/svg/play.svg");
     background-size: contain;
     background-color: transparent;
-    cursor: pointer;
     border: 0;
     opacity: 50%;
     transition: .3s;
 }
 
-.play:focus {
-    border: 0;
+.play-button-container {
+    position: absolute;
+    height: 160px;
+    width: 160px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: .3s;
+    z-index: 10;
+    opacity: 50%;
+    cursor: pointer;
 }
 
-.play:hover {
-    opacity: 90%;
+.play-button-container:hover {
     transform: scale(1.1);
+    cursor: pointer;
+    opacity: 90%;
     filter: brightness(.85);
+}
+
+.play:focus {
+    border: 0;
 }
 
 .active::after {
@@ -200,7 +225,8 @@ body {
     width: 100%;
     height: 2px;
     background-color: var(--color-gold);
-    animation: fill-line .4s ease-in-out;
+    animation: fill-line .3s ease-in-out;
+    -webkit-animation: fill-line .3s ease-in-out;
 }
 
 .deactive::after {
@@ -211,11 +237,12 @@ body {
     width: 100%;
     height: 2px;
     background-color: var(--color-gold);
-    animation: remove-line .4s ease-in-out;
+    animation: remove-line .3s ease-in-out;
+    -webkit-animation: remove-line .3s ease-in-out;
 }
 
 .align-end::after {
-    align-self: end;    
+    align-self: end;
 }
 
 .align-start::after {
@@ -263,7 +290,6 @@ body {
     -webkit-animation: play-show .4s ease-in-out;
 }
 
-
 .hide {
     animation: hide .15s ease-in-out;
 }
@@ -272,19 +298,22 @@ body {
     animation: show .15s ease-in-out;
 }
 
-
 @keyframes hide {
-    from {opacity: 100;}
-    to {opacity: 0;}
+    from {
+        opacity: 100;
+    }
+    to {
+        opacity: 0;
+    }
 }
 
 @keyframes show {
-    from {opacity: 0;}
-    to {opacity: 100;}
-}
-
-.pause {
-    background-image: url("./assets/svg/pause.svg");
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100;
+    }
 }
 
 .footer {
