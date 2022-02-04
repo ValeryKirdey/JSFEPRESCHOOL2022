@@ -225,6 +225,15 @@ body {
     -webkit-animation: play-show .4s ease-in-out;
 }
 
+
+.hide {
+    animation: hide .15s ease-in-out;
+}
+
+.show {
+    animation: show .15s ease-in-out;
+}
+
 .pause {
     background-image: url("./assets/svg/pause.svg");
 }
