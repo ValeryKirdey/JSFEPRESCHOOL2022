@@ -1,72 +1,38 @@
-const playPauseBtn = document.querySelector('.play');
-let isPlay = false;
-const audio = new Audio();
+const navItems = document.querySelectorAll('.nav-item')
+const audio = document.querySelector('.audio')
+const playContainer = document.querySelector('.play-button-container')
+const logo = document.querySelector('.logo')
+let context;
+let src;
+let analyser;
+let init = false
+let isPlay = false
+let currentItem = navItems[0]
+let showInfo = false;
 
-function playAudio() {
-    audio.src = './assets/audio/night.mp3';
-    audio.currentTime = 0;
-    if (!isPlay) {
-
+async function playAudio() {
+    if (!init) {
+        try {
+            let AudioContext = window.AudioContext || window.webkitAudioContext || false
+            if (AudioContext) {
+                context = new AudioContext();
+                src = context.createMediaElementSource(audio)
+                analyser = context.createAnalyser()
+                src.connect(analyser)
+                analyser.connect(context.destination);
+                analyser.fftSize = 64;
+                audio.addEventListener('play', visualizer);
+            }
+        } catch (e) {
+            console.log(e)
+        }
+        init = true
+    }
+    if (isPlay) {
+        audio.src = `./assets/audio/${currentItem.firstChild.dataset.bird}.mp3`
+        await new Promise(resolve => audio.addEventListener('canplay', resolve))
         audio.play()
-        isPlay = true
-    } else { isPlay }
-    console.log(isPlay)
-}
-
-playPauseBtn.addEventListener('click', playAudio);
-
-
-//---------------------------------------------------
-
-// let play = 'play';
-// const themeSwitcher = document.querySelector('.pause');
-// themeSwitcher.addEventListener('click', switchTheme);
-
-// function switchTheme() {
-//     themeSwitcher.classList.toggle('.pause');
-//     play = themeSwitcher.classList.contains('.pause') ? 'play' : 'pause';
-//     toggleLight();
-// }
-
-
-
-//---------------------------------------------------
-const navList = document.querySelector('.nav-list');
-const mainBackgraund = document.querySelectorAll('.main');
-
-navList.addEventListener('click', updateMain);
-
-function updateMain(event) {
-    if (event.target.classList.contains('nav-item')) {
-        const activeBtn = document.querySelector('.active');
-        const pressedBtn = event.target;
-        activeBtn.classList.remove('active');
-        pressedBtn.classList.add('active');
-        let item = event.target.dataset.item;
-        mainBackgraund.forEach((img) => img.src = `./assets/img/${item}.jpg`);
+    } else {
+        audio.pause()
     }
 }
-
-function preloadImages() {
-    const items = ['winter', 'thunder', 'summer', 'rain'];
-    items.forEach(elem => {
-        for (let i = 1; i <= 8; i++) {
-            const img = new Image();
-            img.src = `./assets/img/${elem}.jpg`;
-        }
-    });
-}
-
-preloadImages();
-
-//----------------------------------------------------
-
-
-
-// document.body.addEventListener('click', e => {
-//     if (!e.target.matches('button')) return
-//     document.querySelector('.forest').src = e.target.dataset.item
-
-//     document.querySelectorAll('button').forEach(btn => btn.classList.remove('active'))
-//     e.target.classList.add('active')
-// })
