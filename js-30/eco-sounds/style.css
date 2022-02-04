@@ -15,6 +15,7 @@ body {
     min-width: 768px;
     font-family: 'Inter', sans-serif;
     background-color: black;
+    position: relative;
 }
 
 .header {
@@ -144,7 +145,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     overflow-x: hidden;
-    /* background-image: url("./assets/img/swamp.jpg") */
+    background-image: url("./assets/img/swamp.jpg")
 }
 
 .bg-night {
@@ -281,13 +282,13 @@ body {
 }
 
 .play-hide {
-    animation: play-hide .4s ease-in-out;
-    -webkit-animation: play-hide .4s ease-in-out;
+    animation: play-hide .2s ease-in-out;
+    -webkit-animation: play-hide .2s ease-in-out;
 }
 
 .play-show {
-    animation: play-show .4s ease-in-out;
-    -webkit-animation: play-show .4s ease-in-out;
+    animation: play-show .2s ease-in-out;
+    -webkit-animation: play-show .2s ease-in-out;
 }
 
 .hide {
