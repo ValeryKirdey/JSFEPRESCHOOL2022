@@ -1,6 +1,6 @@
 const navItems = document.querySelectorAll('.nav-item')
 const audio = document.querySelector('.audio')
-const playContainer = document.querySelector('.play')
+const playContainer = document.querySelector('.play-button-container')
 const logo = document.querySelector('.logo')
 let context;
 let src;
@@ -55,7 +55,7 @@ async function playAudio() {
         init = true
     }
     if (isPlay) {
-        audio.src = `./assets/audio/${currentItem.firstChild.dataset.item}.mp3`
+        audio.src = `./assets/audio/${currentItem.firstChild.dataset.bird}.mp3`
         await new Promise(resolve => audio.addEventListener('canplay', resolve))
         audio.play()
     } else {
@@ -103,7 +103,7 @@ function setActive(targetItem) {
     animate(prevItem, 'deactive', true).then(() => prevItem.classList.remove(directionPrev))
     navItems.forEach(e => e.classList.remove('active'))
     animate(mainContainer, 'hide', true)
-        .then(() => setBackground(targetItem.firstChild.dataset.item))
+        .then(() => setBackground(targetItem.firstChild.dataset.bird))
         .then(() => animate(mainContainer, 'show', true))
 
     targetItem.classList.add(directionCurrent)
