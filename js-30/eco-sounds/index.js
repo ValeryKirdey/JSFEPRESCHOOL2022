@@ -40,17 +40,17 @@ const playPauseLogo = document.querySelector('.logo');
 const playNavSounds = document.querySelector('[data-item]')
 
 let isPlay = false;
-const audio = new Audio();
+const sound = new Audio();
 
 function playAudio() {
     // audio.src = './assets/audio/night.mp3';
-    audio.src = sourceFinder();
-    audio.currentTime = 0;
+    sound.src = sourceFinder();
+    sound.currentTime = 0;
     if (!isPlay) {
-        audio.play()
+        sound.play()
         isPlay = true
     } else {
-        audio.pause();
+        sound.pause();
         isPlay = false
     }
     toggleButton()

@@ -50,6 +50,7 @@ body {
     background: url("./assets/svg/fire.svg") no-repeat;
     background-size: contain;
     transition: 0.3s;
+    text-decoration: none;
 }
 
 .logo:hover {
