@@ -2,7 +2,7 @@ let isPlay = false;
 let play_pause = document.querySelector(".play_pause");
 let play_pause2 = document.querySelector(".play_pause2");
 let link = document.querySelectorAll(".nav-link");
-let night = document.querySelector("#night");
+// let night = document.querySelector("#night");
 let forest = document.querySelector("#forest");
 let rain = document.querySelector("#rain");
 let summer = document.querySelector("#summer");
@@ -11,7 +11,7 @@ let thunder = document.querySelector("#thunder");
 let sea = document.querySelector("#sea");
 let winter = document.querySelector("#winter");
 let imgFon = document.querySelector(".container_img");
-night.addEventListener("click", playAudio);
+// night.addEventListener("click", playAudio);
 forest.addEventListener("click", playAudio);
 rain.addEventListener("click", playAudio);
 summer.addEventListener("click", playAudio);
@@ -22,7 +22,7 @@ winter.addEventListener("click", playAudio);
 play_pause.addEventListener("click", playAudio2);
 play_pause2.addEventListener("click", playAudio2);
 const audio = new Audio();
-audio.src = `./assets/audio/night.mp3`;
+audio.src = `./assets/audio/forest.mp3`;
 
 function playAudio2() {
     if (!isPlay) {

@@ -124,7 +124,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 300px;
-    background-image: url(./assets/img/night.jpg);
+    background-image: url(./assets/img/forest.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     height: calc(100vh - 120px);
