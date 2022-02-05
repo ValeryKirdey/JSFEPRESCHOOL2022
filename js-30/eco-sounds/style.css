@@ -57,16 +57,9 @@ body {
 }
 
 .logo {
-    width: 50px;
+    width: 40px;
     height: 50px;
-    background: url("./assets/svg/fire.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
     transition: 0.3s;
-}
-
-.logo a {
-    text-decoration: none;
 }
 
 .logo:hover {
@@ -75,7 +68,7 @@ body {
     filter: brightness(0) saturate(100%) invert(52%) sepia(99%) saturate(837%) hue-rotate(341deg) brightness(90%) contrast(95%);
 }
 
-.nav-list {
+.nav ul {
     display: flex;
     justify-content: center;
     list-style-type: none;

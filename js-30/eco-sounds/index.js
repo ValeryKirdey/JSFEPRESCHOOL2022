@@ -1,4 +1,3 @@
-"use strict";
 let isPlay = false;
 let play_pause = document.querySelector(".play_pause");
 let play_pause2 = document.querySelector(".play_pause2");
@@ -43,12 +42,12 @@ function playAudio(ev) {
     for (let l of link) {
         l.classList.remove("active");
     }
-    let attribute = ev.target.getAttribute("id");
+    let element = ev.target.getElement("id");
     ev.target.classList.add("active");
-    audio.src = `./assets/audio/${attribute}.mp3`;
+    audio.src = `./assets/audio/${element}.mp3`;
     audio.currentTime = 0;
     audio.play();
-    imgFon.style.backgroundImage = `url(./assets/img/${attribute}.jpg)`;
+    imgFon.style.backgroundImage = `url(./assets/img/${element}.jpg)`;
     play_pause.style.display = "none";
     play_pause2.style.display = "block";
     isPlay = true;
