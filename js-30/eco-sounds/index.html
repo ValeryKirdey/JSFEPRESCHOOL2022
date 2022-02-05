@@ -14,26 +14,27 @@
 <body>
     <header class="header">
         <div class="container header-container">
-            <div>
-                <a class="logo nav-item active" href="#" data-path="./assets/audio/night.mp3" data-order="0" data-bird="bonfire"></a>
-            </div>
+            <logo class="logo">
+                <a class="nav-item" href="#" data-path="./assets/audio/night.mp3" data-order="0" data-bird="bonfire"></a>
+            </logo>
             <nav class="nav">
-                <ul class="nav-items">
-                    <li class="nav-item"><a class="nav-link" href="#" data-path="./assets/audio/forest.mp3" data-order="1" data-bird="forest">Forest</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" data-path="./assets/audio/rain.mp3" data-order="2" data-bird="rain">Rain</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" data-path="./assets/audio/summer.mp3" data-order="3" data-bird="summer">Summer</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" data-path="./assets/audio/swamp.mp3" data-order="4" data-bird="swamp">Swamp</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" data-path="./assets/audio/thunder.mp3" data-order="5" data-bird="thunder">Thunder</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" data-path="./assets/audio/sea.mp3" data-order="6" data-bird="sea">Sea</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" data-path="./assets/audio/winter.mp3" data-order="7" data-bird="winter">Winter</a></li>
+                <ul class="nav-list">
+                    <li class="nav-item"><a class="nav-link" href="#" data-bird="forest">Forest</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-bird="rain">Rain</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-bird="summer">Summer</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-bird="swamp">Swamp</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-bird="thunder">Thunder</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-bird="sea">Sea</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-bird="winter">Winter</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <main class="main">
-        <!-- <button class="play"></button> -->
-        <audio class="audio" src="./assets/audio/night.mp3" loop></audio>
-        <div class="play-button-container play"></div>
+        <img class="img-video" src="./assets/img/night.jpg" alt="video">
+        <button class="play=btn" data-bird="night"></button>
+        <!-- <audio class="audio" src="./assets/audio/night.mp3" loop></audio> -->
+        <!-- <div class="play-button-container play"></div> -->
     </main>
     <footer class="footer">
         <div class="footer-container">

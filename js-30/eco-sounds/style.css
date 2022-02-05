@@ -50,6 +50,9 @@ body {
     background: url("./assets/svg/fire.svg") no-repeat;
     background-size: contain;
     transition: 0.3s;
+}
+
+.logo a {
     text-decoration: none;
 }
 
@@ -68,7 +71,7 @@ body {
     z-index: 20;
 }
 
-.nav-items {
+.nav-list {
     display: flex;
     justify-content: center;
     list-style-type: none;
@@ -134,6 +137,8 @@ body {
     animation: fill-line .4s ease-in-out;
 } */
 
+
+/* 
 .main {
     position: relative;
     display: flex;
@@ -146,115 +151,69 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     overflow-x: hidden;
-    background-image: url("./assets/img/swamp.jpg")
+    background-image: url("./assets/img/swamp.jpg") z-index 1;
+} */
+
+.img-video {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 120px);
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    z-index: 1;
 }
 
-.bg-night {
-    background-image: url("./assets/img/night.jpg")
-}
-
-.bg-forest {
-    background-image: url("./assets/img/forest.jpg")
-}
-
-.bg-rain {
-    background-image: url("./assets/img/rain.jpg")
-}
-
-.bg-sea {
-    background-image: url("./assets/img/sea.jpg")
-}
-
-.bg-summer {
-    background-image: url("./assets/img/summer.jpg")
-}
-
-.bg-swamp {
-    background-image: url("./assets/img/swamp.jpg")
-}
-
-.bg-thunder {
-    background-image: url("./assets/img/thunder.jpg")
-}
-
-.bg-winter {
-    background-image: url("./assets/img/winter.jpg")
-}
-
-.pause {
-    background-image: url("./assets/svg/pause.svg");
-}
-
-.play {
+button {
+    position: absolute;
+    left: calc(50% - 80px);
+    top: calc(50% - 80px);
     width: 160px;
     height: 160px;
     background-image: url("./assets/svg/play.svg");
+    background-repeat: no-repeat;
     background-size: contain;
     background-color: transparent;
+    z-index: 2;
     border: 0;
     opacity: 50%;
     transition: .3s;
 }
 
-.play-button-container {
-    position: absolute;
-    height: 160px;
-    width: 160px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    transition: .3s;
-    z-index: 10;
-    opacity: 50%;
-    cursor: pointer;
-}
-
-.play-button-container:hover {
+button:hover {
     transform: scale(1.1);
     cursor: pointer;
     opacity: 90%;
     filter: brightness(.85);
 }
 
-.play:focus {
+button:focus {
     border: 0;
 }
 
-.active::after {
-    content: "";
-    position: relative;
-    top: 5px;
-    width: 100%;
-    height: 2px;
-    background-color: var(--color-gold);
-    animation: fill-line .3s ease-in-out;
-    -webkit-animation: fill-line .3s ease-in-out;
+.pause {
+    position: absolute;
+    left: calc(50% - 80px);
+    top: calc(50% - 80px);
+    width: 160px;
+    height: 160px;
+    background-image: url("./assets/svg/pause.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    z-index: 2;
+    border: 0;
+    opacity: 50%;
+    transition: .3s;
 }
 
-.deactive::after {
-    content: "";
-    position: relative;
-    top: 5px;
-    right: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--color-gold);
-    animation: remove-line .3s ease-in-out;
-    -webkit-animation: remove-line .3s ease-in-out;
-}
 
-.align-end::after {
-    align-self: end;
-}
-
-.align-start::after {
-    align-self: start;
-}
-
-.visually-hidden {
-    visibility: hidden;
-}
-
+/* 
 @keyframes play-hide {
     0% {
         opacity: 100%;
@@ -280,9 +239,10 @@ body {
         opacity: 100%;
         transform: scale(1);
     }
-}
+} */
 
-.play-hide {
+
+/* .play-hide {
     animation: play-hide .2s ease-in-out;
     -webkit-animation: play-hide .2s ease-in-out;
 }
@@ -298,9 +258,10 @@ body {
 
 .show {
     animation: show .15s ease-in-out;
-}
+} */
 
-@keyframes hide {
+
+/* @keyframes hide {
     from {
         opacity: 100;
     }
@@ -316,7 +277,7 @@ body {
     to {
         opacity: 100;
     }
-}
+} */
 
 .footer {
     display: flex;
