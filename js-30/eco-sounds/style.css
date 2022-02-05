@@ -16,7 +16,7 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: black;
     height: auto;
-    width: 100%;
+    max-width: 1920px;
     overflow: hidden;
     position: relative;
 }
@@ -168,13 +168,19 @@ body {
     overflow-x: hidden;
 }
 
+.main-container {
+    width: 100% auto;
+}
+
 .img-video {
     position: relative;
     height: calc(100vh - 120px);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-image: url("./assets/img/night.jpg");
     z-index: 1;
+    overflow-x: hidden;
 }
 
 button {
@@ -219,73 +225,6 @@ button:hover {
 button:focus {
     border: 0;
 }
-
-
-/* 
-@keyframes play-hide {
-    0% {
-        opacity: 100%;
-    }
-    30% {
-        transform: scale(1.2)
-    }
-    100% {
-        opacity: 0%;
-        transform: scale(0);
-    }
-}
-
-@keyframes play-show {
-    0% {
-        opacity: 0%;
-        transform: scale(0);
-    }
-    70% {
-        transform: scale(1.2);
-    }
-    100% {
-        opacity: 100%;
-        transform: scale(1);
-    }
-} */
-
-
-/* .play-hide {
-    animation: play-hide .2s ease-in-out;
-    -webkit-animation: play-hide .2s ease-in-out;
-}
-
-.play-show {
-    animation: play-show .2s ease-in-out;
-    -webkit-animation: play-show .2s ease-in-out;
-}
-
-.hide {
-    animation: hide .15s ease-in-out;
-}
-
-.show {
-    animation: show .15s ease-in-out;
-} */
-
-
-/* @keyframes hide {
-    from {
-        opacity: 100;
-    }
-    to {
-        opacity: 0;
-    }
-}
-
-@keyframes show {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 100;
-    }
-} */
 
 .footer {
     display: flex;

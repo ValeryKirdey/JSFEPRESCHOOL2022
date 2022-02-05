@@ -15,7 +15,38 @@ function playAudio() {
         audio.pause();
         isPlay = false;
     }
+    toggleButton()
 }
+
+
+// let isPlay = false;
+// const audio = new Audio();
+
+// function playAudio() {
+//     // audio.src = './assets/audio/night.mp3';
+//     audio.src = sourceFinder();
+//     audio.currentTime = 0;
+//     if (!isPlay) {
+//         audio.play()
+//         isPlay = true
+//     } else {
+//         audio.pause();
+//         isPlay = false
+//     }
+//     toggleButton()
+//         // console.log(isPlay)
+// }
+
+// function sourceFinder() {
+//     const soundItem = document.querySelectorAll('.nav-item')
+//     soundItem.forEach((el) => {
+//             if (el.classList.contains('active')) {
+//                 const soundName = el.dataset.bird
+//                 const sourse = `./assets/audio/${soundName}.mp3`
+//                     // console.log(source)
+//             }
+//             return source
+//         })
 //---------------Change image & sound---------------------
 
 const navBtns = document.querySelectorAll('.nav-link');
