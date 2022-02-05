@@ -15,6 +15,9 @@ body {
     min-width: 768px;
     font-family: 'Inter', sans-serif;
     background-color: black;
+    height: auto;
+    width: 100%;
+    overflow: hidden;
     position: relative;
 }
 
@@ -47,7 +50,8 @@ body {
 .logo {
     width: 50px;
     height: 50px;
-    background: url("./assets/svg/fire.svg") no-repeat;
+    background: url("./assets/svg/fire.svg");
+    background-repeat: no-repeat;
     background-size: contain;
     transition: 0.3s;
 }
@@ -100,11 +104,12 @@ body {
     filter: brightness(0) saturate(100%) invert(52%) sepia(99%) saturate(837%) hue-rotate(341deg) brightness(90%) contrast(95%);
 }
 
-.nav-item.active {
+.active {
     filter: brightness(0) saturate(100%) invert(52%) sepia(99%) saturate(837%) hue-rotate(341deg) brightness(90%) contrast(95%);
+    cursor: pointer;
 }
 
-.nav-item.active:hover {
+.active:hover {
     filter: none;
 }
 
@@ -154,18 +159,21 @@ body {
     background-image: url("./assets/img/swamp.jpg") z-index 1;
 } */
 
-.img-video {
-    position: relative;
+.main {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 120px);
     justify-content: center;
     align-items: center;
     align-content: center;
+    overflow-x: hidden;
+}
+
+.img-video {
+    position: relative;
+    height: calc(100vh - 120px);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    overflow-x: hidden;
     z-index: 1;
 }
 
@@ -175,7 +183,23 @@ button {
     top: calc(50% - 80px);
     width: 160px;
     height: 160px;
-    background-image: url("./assets/svg/play.svg");
+    background-image: url("assets/svg/play.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    z-index: 2;
+    border: 0;
+    opacity: 50%;
+    transition: .3s;
+}
+
+.pause {
+    position: absolute;
+    left: calc(50% - 80px);
+    top: calc(50% - 80px);
+    width: 160px;
+    height: 160px;
+    background-image: url("assets/svg/pause.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-color: transparent;
@@ -194,22 +218,6 @@ button:hover {
 
 button:focus {
     border: 0;
-}
-
-.pause {
-    position: absolute;
-    left: calc(50% - 80px);
-    top: calc(50% - 80px);
-    width: 160px;
-    height: 160px;
-    background-image: url("./assets/svg/pause.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-color: transparent;
-    z-index: 2;
-    border: 0;
-    opacity: 50%;
-    transition: .3s;
 }
 
 
