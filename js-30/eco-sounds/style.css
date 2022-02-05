@@ -15,8 +15,8 @@ body {
     min-width: 768px;
     font-family: 'Inter', sans-serif;
     background-color: black;
-    height: auto;
-    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
     overflow: hidden;
     position: relative;
 }
@@ -47,6 +47,15 @@ body {
     }
 }
 
+.header-container {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 95px;
+    z-index: 20;
+}
+
 .logo {
     width: 50px;
     height: 50px;
@@ -66,40 +75,27 @@ body {
     filter: brightness(0) saturate(100%) invert(52%) sepia(99%) saturate(837%) hue-rotate(341deg) brightness(90%) contrast(95%);
 }
 
-.header-container {
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 95px;
-    z-index: 20;
-}
-
 .nav-list {
     display: flex;
     justify-content: center;
     list-style-type: none;
 }
 
-.nav-link {
-    color: white;
-    text-decoration: none;
-}
-
 .nav {
     margin-left: auto;
 }
 
-.nav-item {
+.nav-link {
     color: white;
     margin: auto 15px;
     cursor: pointer;
     transition: 0.3s;
     font-size: 23px;
     line-height: 50px;
+    text-decoration: none;
 }
 
-.nav-item:hover {
+.nav-link:hover {
     transform: scale(1.1);
     filter: brightness(0) saturate(100%) invert(52%) sepia(99%) saturate(837%) hue-rotate(341deg) brightness(90%) contrast(95%);
 }
@@ -112,35 +108,6 @@ body {
 .active:hover {
     filter: none;
 }
-
-
-/* @keyframes fill-line {
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 100%;
-    }
-}
-
-@keyframes remove-line {
-    0% {
-        width: 100%;
-    }
-    100% {
-        width: 0;
-    }
-}
-
-.active::after {
-    content: "";
-    position: relative;
-    top: 5px;
-    width: 100%;
-    height: 2px;
-    background-color: white;
-    animation: fill-line .4s ease-in-out;
-} */
 
 
 /* 
@@ -159,20 +126,45 @@ body {
     background-image: url("./assets/img/swamp.jpg") z-index 1;
 } */
 
-.main {
+.container_img {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    align-content: center;
-    overflow-x: hidden;
+    min-height: 300px;
+    background-image: url(./assets/img/night.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100vh - 120px);
 }
 
-.main-container {
-    width: 100% auto;
+.play_pause:hover,
+.play_pause2:hover {
+    transform: scale(1.1);
+    transition: 0.2s;
+    cursor: pointer;
+    opacity: 90%;
+    filter: brightness(.85);
+    filter: brightness(0) saturate(100%) invert(52%) sepia(99%) saturate(837%) hue-rotate(341deg) brightness(90%) contrast(95%);
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -ms-transition: 0.2s;
+    -o-transition: 0.2s;
 }
 
-.img-video {
+.play_pause2 {
+    display: none;
+}
+
+.play-btn {
+    opacity: 50%;
+}
+
+.play-btn:hover {
+    opacity: 90%;
+}
+
+
+/* .img-video {
     position: relative;
     height: calc(100vh - 120px);
     background-size: cover;
@@ -181,8 +173,10 @@ body {
     background-image: url("./assets/img/night.jpg");
     z-index: 1;
     overflow-x: hidden;
-}
+} */
 
+
+/* 
 button {
     position: absolute;
     left: calc(50% - 80px);
@@ -224,7 +218,7 @@ button:hover {
 
 button:focus {
     border: 0;
-}
+} */
 
 .footer {
     display: flex;
