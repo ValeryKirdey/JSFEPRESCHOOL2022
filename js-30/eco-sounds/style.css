@@ -15,6 +15,10 @@ body {
     min-width: 768px;
     font-family: 'Inter', sans-serif;
     background-color: black;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
 }
 
 .header {
@@ -43,12 +47,19 @@ body {
     }
 }
 
+.header-container {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 95px;
+    z-index: 20;
+}
+
 .logo {
-    width: 50px;
+    width: 40px;
     height: 50px;
-    background: url("./assets/svg/fire.svg") no-repeat;
-    background-size: contain;
-    transition: 0.3s;
+    transition: all, 0.3s;
 }
 
 .logo:hover {
@@ -57,235 +68,85 @@ body {
     filter: brightness(0) saturate(100%) invert(52%) sepia(99%) saturate(837%) hue-rotate(341deg) brightness(90%) contrast(95%);
 }
 
-.header-container {
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 95px;
-}
-
 .nav-list {
     display: flex;
     justify-content: center;
     list-style-type: none;
-}
-.nav-link {
-    color: white;
-    text-decoration: none;
 }
 
 .nav {
     margin-left: auto;
 }
 
-.nav-item {
+.nav-link {
     color: white;
     margin: auto 15px;
     cursor: pointer;
     transition: 0.3s;
     font-size: 23px;
     line-height: 50px;
+    text-decoration: none;
 }
 
-.nav-item:hover {
+.nav-link:hover {
     transform: scale(1.1);
     filter: brightness(0) saturate(100%) invert(52%) sepia(99%) saturate(837%) hue-rotate(341deg) brightness(90%) contrast(95%);
 }
 
-.nav-item.active {
+.active {
     filter: brightness(0) saturate(100%) invert(52%) sepia(99%) saturate(837%) hue-rotate(341deg) brightness(90%) contrast(95%);
+    cursor: pointer;
 }
 
-.nav-item.active:hover {
-    filter: none;
-}
-
-
-/* @keyframes fill-line {
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 100%;
-    }
-}
-
-@keyframes remove-line {
-    0% {
-        width: 100%;
-    }
-    100% {
-        width: 0;
-    }
-}
-
-.active::after {
-    content: "";
-    position: relative;
-    top: 5px;
-    width: 100%;
-    height: 2px;
-    background-color: white;
-    animation: fill-line .4s ease-in-out;
-} */
-
-.main {
+.main-container {
     display: flex;
-    flex-direction: column;
-    height: calc(100vh - 120px);
     justify-content: center;
     align-items: center;
-    align-content: center;
-    background-size: cover;
-    background-position: center;
+    background-image: url('./assets/img/night.jpg');
     background-repeat: no-repeat;
-    overflow-x: hidden;
-    background-image: url("./assets/img/night.jpg");
+    background-size: cover;
+    height: calc(100vh - 120px);
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
 }
 
-.bg-forest {
-    background-image: url("./assets/img/forest.jpg")
-}
-
-.bg-rain {
-    background-image: url("./assets/img/rain.jpg")
-}
-
-.bg-sea {
-    background-image: url("./assets/img/sea.jpg")
-}
-
-.bg-summer {
-    background-image: url("./assets/img/summer.jpg")
-}
-
-.bg-swamp {
-    background-image: url("./assets/img/swamp.jpg")
-}
-
-.bg-thunder {
-    background-image: url("./assets/img/thunder.jpg")
-}
-
-.bg-winter {
-    background-image: url("./assets/img/winter.jpg")
+.button {
+    width: 170px;
+    height: 170px;
+    padding: 5px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.5s;
+    opacity: 50%;
+    border: 0;
+    z-index: 4;
+    background-image: url('./assets/svg/play.svg');
+    background-size: contain;
 }
 
 .play {
-    width: 160px;
-    height: 160px;
-    background-image: url("./assets/svg/play.svg");
+    background-image: url('./assets/svg/pause.svg');
     background-size: contain;
-    background-color: transparent;
-    cursor: pointer;
-    border: 0;
-    opacity: 50%;
-    transition: .3s;
-}
-
-.play:focus {
-    border: 0;
 }
 
 .play:hover {
     opacity: 90%;
+}
+
+.button:hover {
     transform: scale(1.1);
+    transition: 0.2s;
+    cursor: pointer;
+    opacity: 90%;
     filter: brightness(.85);
-}
-
-.active::after {
-    content: "";
-    position: relative;
-    top: 5px;
-    width: 100%;
-    height: 2px;
-    background-color: var(--color-gold);
-    animation: fill-line .4s ease-in-out;
-}
-
-.deactive::after {
-    content: "";
-    position: relative;
-    top: 5px;
-    right: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--color-gold);
-    animation: remove-line .4s ease-in-out;
-}
-
-.align-end::after {
-    align-self: end;    
-}
-
-.align-start::after {
-    align-self: start;
-}
-
-.visually-hidden {
-    visibility: hidden;
-}
-
-@keyframes play-hide {
-    0% {
-        opacity: 100%;
-    }
-    30% {
-        transform: scale(1.2)
-    }
-    100% {
-        opacity: 0%;
-        transform: scale(0);
-    }
-}
-
-@keyframes play-show {
-    0% {
-        opacity: 0%;
-        transform: scale(0);
-    }
-    70% {
-        transform: scale(1.2);
-    }
-    100% {
-        opacity: 100%;
-        transform: scale(1);
-    }
-}
-
-.play-hide {
-    animation: play-hide .4s ease-in-out;
-    -webkit-animation: play-hide .4s ease-in-out;
-}
-
-.play-show {
-    animation: play-show .4s ease-in-out;
-    -webkit-animation: play-show .4s ease-in-out;
-}
-
-
-.hide {
-    animation: hide .15s ease-in-out;
-}
-
-.show {
-    animation: show .15s ease-in-out;
-}
-
-
-@keyframes hide {
-    from {opacity: 100;}
-    to {opacity: 0;}
-}
-
-@keyframes show {
-    from {opacity: 0;}
-    to {opacity: 100;}
-}
-
-.pause {
-    background-image: url("./assets/svg/pause.svg");
+    filter: brightness(0) saturate(100%) invert(52%) sepia(99%) saturate(837%) hue-rotate(341deg) brightness(90%) contrast(95%);
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -ms-transition: 0.2s;
+    -o-transition: 0.2s;
 }
 
 .footer {

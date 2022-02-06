@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="normalize.css">
     <link rel="shortcut icon" href="./assets/svg/favicon.ico" type="image/x-icon">
     <title>eco-sounds</title>
 </head>
@@ -14,23 +15,24 @@
 <body>
     <header class="header">
         <div class="container header-container">
-            <logo class="logo nav-item"><a data-item="bonfire" data-path="./assets/audio/night.mp3" data-order="0"></a></logo>
+            <img class="logo nav-link night active " src="./assets/svg/fire.svg" alt="logotip">
             <nav class="nav">
                 <ul class="nav-list">
-                    <li class="nav-item  active"><a class="nav-link" href="#" data-item="forest" data-path="./assets/audio/forest.mp3" data-order="1">Forest</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" data-item="rain" data-path="./assets/audio/rain.mp3" data-order="2">Rain</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" data-item="summer" data-path="./assets/audio/summer.mp3" data-order="3">Summer</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" data-item="swamp" data-path="./assets/audio/swamp.mp3" data-order="4">Swamp</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" data-item="thunder" data-path="./assets/audio/thunder.mp3" data-order="5">Thunder</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" data-item="sea" data-path="./assets/audio/sea.mp3" data-order="6">Sea</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" data-item="winter" data-path="./assets/audio/winter.mp3" data-order="7">Winter</a></li>
+                    <li class="nav-link forest">Forest</li>
+                    <li class="nav-link rain">Rain</li>
+                    <li class="nav-link summer">Summer</li>
+                    <li class="nav-link swamp">Swamp</li>
+                    <li class="nav-link thunder">Thunder</li>
+                    <li class="nav-link sea">Sea</li>
+                    <li class="nav-link winter">Winter</li>
                 </ul>
             </nav>
         </div>
     </header>
     <main class="main">
-        <button class="play"></button>
-        <audio class="audio" src="./assets/audio/night.mp3" loop></audio>
+        <div class="main-container">
+            <button class="button"></button>
+        </div>
     </main>
     <footer class="footer">
         <div class="footer-container">
@@ -42,7 +44,7 @@
             <a class="rss-logo" target="_blank" href="https://rs.school/js-stage0/"></a>
         </div>
     </footer>
-    <script type="module" src="./index.js"></script>
+    <script src="index.js" defer></script>
 </body>
 
 </html>
