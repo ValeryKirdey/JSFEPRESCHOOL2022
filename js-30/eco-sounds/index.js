@@ -1,55 +1,123 @@
-let isPlay = false;
-let play_pause = document.querySelector(".play_pause");
-let play_pause2 = document.querySelector(".play_pause2");
-let link = document.querySelectorAll(".nav_link");
-const night = document.querySelector("night");
-const forest = document.querySelector("forest");
-const rain = document.querySelector("rain");
-const summer = document.querySelector("summer");
-const swamp = document.querySelector("swamp");
-const thunder = document.querySelector("thunder");
-const sea = document.querySelector("sea");
-const winter = document.querySelector("winter");
-const imgFon = document.querySelector(".container_img");
-night.addEventListener("click", playAudio);
-forest.addEventListener("click", playAudio);
-rain.addEventListener("click", playAudio);
-summer.addEventListener("click", playAudio);
-swamp.addEventListener("click", playAudio);
-thunder.addEventListener("click", playAudio);
-sea.addEventListener("click", playAudio);
-winter.addEventListener("click", playAudio);
-play_pause.addEventListener("click", playAudio2);
-play_pause2.addEventListener("click", playAudio2);
 const audio = new Audio();
-audio.src = `./assets/audio/night.mp3`;
+audio.src = './assets/audio/night.mp3'
+let isPlay = false;
 
-function playAudio2() {
+const btnPlay = document.querySelector('.button')
+const main = document.querySelector('.main-container')
+const btnLogo = document.querySelector('.logo')
+const btnNavLink = document.querySelectorAll('.nav-link')
+const btnForest = document.querySelector('.forest')
+const btnRain = document.querySelector('.rain')
+const btnSummer = document.querySelector('.summer')
+const btnSwamp = document.querySelector('.swamp')
+const btnThunder = document.querySelector('.thunder')
+const btnSea = document.querySelector('.sea')
+const btnWinter = document.querySelector('.winter')
+
+
+
+btnPlay.addEventListener('click', playSong)
+btnLogo.addEventListener('click', nightSong)
+btnForest.addEventListener('click', forestSong)
+btnRain.addEventListener('click', rainSong)
+btnSummer.addEventListener('click', summerSong)
+btnSwamp.addEventListener('click', swampSong)
+btnThunder.addEventListener('click', thunderSong)
+btnSea.addEventListener('click', seaSong)
+btnWinter.addEventListener('click', winterSong)
+
+
+
+function playSong() {
     if (!isPlay) {
-        audio.play();
-        isPlay = true;
-        play_pause.style.display = "none";
-        play_pause2.style.display = "block";
+
+        audio.play()
+        btnPlay.classList.add('play')
+        isPlay = !isPlay
     } else {
-        audio.pause();
-        isPlay = false;
-        play_pause.style.display = "block";
-        play_pause2.style.display = "none";
+        audio.pause()
+        audio.currentTime = 0
+        btnPlay.classList.remove('play')
+        isPlay = !isPlay
     }
 }
 
-function playAudio(ev) {
-    for (let l of link) {
-        l.classList.remove("active");
-    }
-    let element = ev.target.getElement("id");
-    ev.target.classList.add("active");
-    audio.src = `./assets/audio/${element}.mp3`;
-    audio.currentTime = 0;
-    audio.play();
-    imgFon.style.backgroundImage = `url(./assets/img/${element}.jpg)`;
-    play_pause.style.display = "none";
-    play_pause2.style.display = "block";
-    isPlay = true;
+function stopSong() {
+    audio.pause()
+    btnPlay.classList.add('play')
+    isPlay = false
+    audio.currentTime = 0
+}
 
+
+function nightSong() {
+    stopSong()
+    audio.src = './assets/audio/night.mp3'
+    main.style.backgroundImage = "url('./assets/img/night.jpg')";
+    playSong()
+    btnNavLink.forEach(el => el.classList.remove('active'))
+    btnLogo.classList.add('active')
+}
+
+function forestSong() {
+    stopSong()
+    audio.src = './assets/audio/forest.mp3'
+    main.style.backgroundImage = "url('./assets/img/forest.jpg')";
+    playSong()
+    btnNavLink.forEach(el => el.classList.remove('active'))
+    btnForest.classList.add('active')
+}
+
+function rainSong() {
+    stopSong()
+    audio.src = './assets/audio/rain.mp3'
+    main.style.backgroundImage = "url('./assets/img/rain.jpg')";
+    playSong()
+    btnNavLink.forEach(el => el.classList.remove('active'))
+    btnRain.classList.add('active')
+}
+
+function summerSong() {
+    stopSong()
+    audio.src = './assets/audio/summer.mp3'
+    main.style.backgroundImage = "url('./assets/img/summer.jpg')";
+    playSong()
+    btnNavLink.forEach(el => el.classList.remove('active'))
+    btnSummer.classList.add('active')
+}
+
+function swampSong() {
+    stopSong()
+    audio.src = './assets/audio/swamp.mp3'
+    main.style.backgroundImage = "url('./assets/img/swamp.jpg')";
+    playSong()
+    btnNavLink.forEach(el => el.classList.remove('active'))
+    btnSwamp.classList.add('active')
+}
+
+function thunderSong() {
+    stopSong()
+    audio.src = './assets/audio/thunder.mp3'
+    main.style.backgroundImage = "url('./assets/img/thunder.jpg')";
+    playSong()
+    btnNavLink.forEach(el => el.classList.remove('active'))
+    btnThunder.classList.add('active')
+}
+
+function seaSong() {
+    stopSong()
+    audio.src = './assets/audio/sea.mp3'
+    main.style.backgroundImage = "url('./assets/img/sea.jpg')";
+    playSong()
+    btnNavLink.forEach(el => el.classList.remove('active'))
+    btnSea.classList.add('active')
+}
+
+function winterSong() {
+    stopSong()
+    audio.src = './assets/audio/winter.mp3'
+    main.style.backgroundImage = "url('./assets/img/winter.jpg')";
+    playSong()
+    btnNavLink.forEach(el => el.classList.remove('active'))
+    btnWinter.classList.add('active')
 }

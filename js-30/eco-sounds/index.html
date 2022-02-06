@@ -15,41 +15,24 @@
 <body>
     <header class="header">
         <div class="container header-container">
-            <img class="logo nav_link active" id="night" src="./assets/svg/fire.svg" alt="logotip">
+            <img class="logo nav-link night active " src="./assets/svg/fire.svg" alt="logotip">
             <nav class="nav">
-                <ul id="list_main">
-                    <li class="nav_link" id="forest">Forest</li>
-                    <li class="nav_link" id="rain">Rain</li>
-                    <li class="nav_link" id="summer">Summer</li>
-                    <li class="nav_link" id="swamp">Swamp</li>
-                    <li class="nav_link" id="thunder">Thunder</li>
-                    <li class="nav_link" id="sea">Sea</li>
-                    <li class="nav_link" id="winter">Winter</li>
+                <ul class="nav-list">
+                    <li class="nav-link forest">Forest</li>
+                    <li class="nav-link rain">Rain</li>
+                    <li class="nav-link summer">Summer</li>
+                    <li class="nav-link swamp">Swamp</li>
+                    <li class="nav-link thunder">Thunder</li>
+                    <li class="nav-link sea">Sea</li>
+                    <li class="nav-link winter">Winter</li>
                 </ul>
             </nav>
         </div>
     </header>
     <main class="main">
-        <section class="container_img">
-            <div class="play_pause">
-                <svg class="play-btn" version="1.1" xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 64 64">
-                    <title>play2</title>
-                    <path fill="#e27628" d="M32 0c-17.673 0-32 14.327-32 32s14.327 32 32 32 32-14.327 32-32-14.327-32-32-32zM32 58c-14.359 0-26-11.641-26-26s11.641-26 26-26 26 11.641 26 26-11.641 26-26 26zM24 18l24 14-24 14z"></path>
-                </svg>
-            </div>
-            <div class="play_pause2">
-                <svg class="play-btn" version="1.1" xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 64 64">
-                    <title>pause</title>
-                    <path fill="#e27628" d="M32 0c-17.673 0-32 14.327-32 32s14.327 32 32 32 32-14.327 32-32-14.327-32-32-32zM32 58c-14.359 0-26-11.641-26-26s11.641-26 26-26 26 11.641 26 26-11.641 26-26 26zM20 20h8v24h-8zM36 20h8v24h-8z"></path>
-                </svg>
-            </div>
-        </section>
-        <!-- <div class="main-container">
-            <img class="img-video" src="./assets/img/night.jpg" alt="video">
-            <button class="play=btn" data-bird="night"></button> -->
-        <!-- <audio class="audio" src="./assets/audio/night.mp3" loop></audio> -->
-        <!-- <div class="play-button-container play"></div>
-        </div> -->
+        <div class="main-container">
+            <button class="button"></button>
+        </div>
     </main>
     <footer class="footer">
         <div class="footer-container">
@@ -61,63 +44,7 @@
             <a class="rss-logo" target="_blank" href="https://rs.school/js-stage0/"></a>
         </div>
     </footer>
-    <script defer>
-        let isPlay = false;
-        let play_pause = document.querySelector(".play_pause");
-        let play_pause2 = document.querySelector(".play_pause2");
-        let link = document.querySelectorAll(".nav_link");
-        const night = document.querySelector("night");
-        const forest = document.querySelector("forest");
-        const rain = document.querySelector("rain");
-        const summer = document.querySelector("summer");
-        const swamp = document.querySelector("swamp");
-        const thunder = document.querySelector("thunder");
-        const sea = document.querySelector("sea");
-        const winter = document.querySelector("winter");
-        const imgFon = document.querySelector(".container_img");
-        night.addEventListener("click", playAudio);
-        forest.addEventListener("click", playAudio);
-        rain.addEventListener("click", playAudio);
-        summer.addEventListener("click", playAudio);
-        swamp.addEventListener("click", playAudio);
-        thunder.addEventListener("click", playAudio);
-        sea.addEventListener("click", playAudio);
-        winter.addEventListener("click", playAudio);
-        play_pause.addEventListener("click", playAudio2);
-        play_pause2.addEventListener("click", playAudio2);
-        const audio = new Audio();
-        audio.src = `./assets/audio/night.mp3`;
-
-        function playAudio2() {
-            if (!isPlay) {
-                audio.play();
-                isPlay = true;
-                play_pause.style.display = "none";
-                play_pause2.style.display = "block";
-            } else {
-                audio.pause();
-                isPlay = false;
-                play_pause.style.display = "block";
-                play_pause2.style.display = "none";
-            }
-        }
-
-        function playAudio(ev) {
-            for (let l of link) {
-                l.classList.remove("active");
-            }
-            let element = ev.target.getElement("id");
-            ev.target.classList.add("active");
-            audio.src = `./assets/audio/${element}.mp3`;
-            audio.currentTime = 0;
-            audio.play();
-            imgFon.style.backgroundImage = `url(./assets/img/${element}.jpg)`;
-            play_pause.style.display = "none";
-            play_pause2.style.display = "block";
-            isPlay = true;
-
-        }
-    </script>
+    <script src="index.js" defer></script>
 </body>
 
 </html>
