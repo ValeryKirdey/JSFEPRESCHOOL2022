@@ -125,6 +125,7 @@ body {
     z-index: 4;
     background-image: url('./assets/svg/play.svg');
     background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .play {
