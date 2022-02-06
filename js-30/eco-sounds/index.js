@@ -12,29 +12,13 @@ let sea = document.querySelector("sea");
 let winter = document.querySelector("winter");
 let imgFon = document.querySelector(".container_img");
 night.addEventListener("click", playAudio);
-if (!night)
-    return;
 forest.addEventListener("click", playAudio);
-if (!forest)
-    return;
 rain.addEventListener("click", playAudio);
-if (!rain)
-    return;
 summer.addEventListener("click", playAudio);
-if (!summer)
-    return;
 swamp.addEventListener("click", playAudio);
-if (!swamp)
-    return;
 thunder.addEventListener("click", playAudio);
-if (!thunder)
-    return;
 sea.addEventListener("click", playAudio);
-if (!sea)
-    return;
 winter.addEventListener("click", playAudio);
-if (!winter)
-    return;
 play_pause.addEventListener("click", playAudio2);
 play_pause2.addEventListener("click", playAudio2);
 const audio = new Audio();
