@@ -1,0 +1,1 @@
+console.log('my jokes random app')

@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    color: white;
+    margin: 0 auto;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    padding: 5px auto;
+    background-color: black;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1590px;
+    width: 80%;
+    margin: 25px 0;
+}
+
+@media(max-width: 950px) {
+    .footer-container {
+        width: 100%;
+    }
+}
+
+.footer-data {
+    display: flex;
+    align-items: center;
+}
+
+.footer-data p {
+    margin-right: 15px;
+}
+
+.github {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.github:hover {
+    filter: brightness(0) saturate(100%) invert(52%) sepia(99%) saturate(837%) hue-rotate(341deg) brightness(90%) contrast(95%);
+}
+
+.rss-logo {
+    width: 135px;
+    height: 50px;
+    background-image: url("./assets/svg/rss.svg");
+    background-size: contain;
+    transition: 0.3s;
+}
+
+.rss-logo:hover {
+    filter: brightness(0) saturate(100%) invert(52%) sepia(99%) saturate(837%) hue-rotate(341deg) brightness(90%) contrast(95%);
+}
