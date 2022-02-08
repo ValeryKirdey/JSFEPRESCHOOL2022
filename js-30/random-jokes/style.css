@@ -4,10 +4,58 @@
     margin: 0;
 }
 
-body {
-    color: white;
-    margin: 0 auto;
+a {
+    color: #5ddbe8;
 }
+
+@font-face {
+    font-family: "WubbaLubbaDubDub";
+    src: url("./assets/fonts/WubbaLubbaDubDub.ttf");
+}
+
+@font-face {
+    font-family: "schwifty";
+    src: url("./assets/fonts/get_schwifty.ttf");
+}
+
+body {
+    color: #5ddbe8;
+    text-shadow: -1px 0 black, 1.5px 0 rgb(146, 240, 107, 0.9);
+    /* text-shadow: 1px 1px 2px black, 0 0 5px #92f06b; */
+    -webkit-text-stroke: 0.1px rgba(0, 0, 0, 0.7);
+    margin: 0 auto;
+    font-family: "WubbaLubbaDubDub";
+}
+
+.main-container {
+    background-image: url("./assets/img/bgstars.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100vh - 100px);
+}
+
+
+/* --highlight: #D6DC22;
+--outline-width: 0.25em;
+--portal-gun-light: #7C858A;
+--portal-gun-dark: #5D676F;
+--portal-gun-glass: #397A33;
+--portal-gun-glass-transparent: rgba(172,
+195,
+138,
+0.7);
+--portal-gun-beam-one: #AFD16A;
+--portal-gun-beam-two: #629747;
+--portal-gun-beam-three: #5D9E39;
+--portal-gun-handle: #C4C7CA;
+--rick-skin: #C1B8B4;
+--rick-hair: #B7D8EB;
+--rick-mouth:#792F28;
+--rick-teeth: #D4CB8D;
+--rick-coat: #fff;
+--morty-skin: #F2CFB3;
+--morty-mouth: #61302E;
+--morty-top: #F0ED81; */
 
 .footer {
     display: flex;
@@ -40,23 +88,23 @@ body {
 }
 
 .github {
-    color: white;
     text-decoration: none;
     transition: 0.3s;
 }
 
 .github:hover {
-    filter: brightness(0) saturate(100%) invert(52%) sepia(99%) saturate(837%) hue-rotate(341deg) brightness(90%) contrast(95%);
+    filter: brightness(0) saturate(100%) invert(93%) sepia(41%) saturate(4387%) hue-rotate(148deg) brightness(94%) contrast(91%);
 }
 
 .rss-logo {
     width: 135px;
     height: 50px;
     background-image: url("./assets/svg/rss.svg");
+    background-repeat: no-repeat;
     background-size: contain;
     transition: 0.3s;
 }
 
 .rss-logo:hover {
-    filter: brightness(0) saturate(100%) invert(52%) sepia(99%) saturate(837%) hue-rotate(341deg) brightness(90%) contrast(95%);
+    filter: brightness(0) saturate(100%) invert(93%) sepia(41%) saturate(4387%) hue-rotate(148deg) brightness(94%) contrast(91%);
 }
