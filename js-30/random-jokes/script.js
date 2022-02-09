@@ -12,6 +12,7 @@ function playSong() {
 btnPlay.addEventListener('click', playSong);
 
 
+//-----------------------------------------------------
 // function getdata() {
 //     let dataQuote = document.querySelector('.quote');
 //     // fetch('http://loremricksum.com/api/')
@@ -33,21 +34,23 @@ btnPlay.addEventListener('click', playSong);
 
 
 // }
+//-------------------------------------------------------
 
+// const urlQuote = 'rick-and-morty-quotes.json';
 
-const urlQuote = 'rick-and-morty-quotes.json';
+// async function getQuote() {
+//     const resQuote = await fetch(urlQuote);
+//     const quote = await resQuote.json();
+//     showQuote(quote);
+// }
+// getQuote();
 
-async function getQuote() {
-    const resQuote = await fetch(urlQuote);
-    const quote = await resQuote.json();
-    showQuote(quote);
-}
-getQuote();
+// function showQuote(quote) {
+//     document.getElementsByName('.quote').src = './rick-and-morty-quotes.json';
 
-function showQuote(quote) {
-    document.getElementsByName('.quote').src = './rick-and-morty-quotes.json';
+// }
 
-}
+// const quoteBtn = document.querySelector('.btn');
+// quoteBtn.addEventListener('click', getQuote);
 
-const quoteBtn = document.querySelector('.btn');
-quoteBtn.addEventListener('click', getQuote);
+//-----------------------------------------------------

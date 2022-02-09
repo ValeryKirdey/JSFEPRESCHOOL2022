@@ -8,6 +8,29 @@
     src: url("./assets/fonts/get_schwifty.ttf");
 }
 
+
+/* --highlight: #D6DC22;
+--outline-width: 0.25em;
+--portal-gun-light: #7C858A;
+--portal-gun-dark: #5D676F;
+--portal-gun-glass: #397A33;
+--portal-gun-glass-transparent: rgba(172,
+195,
+138,
+0.7);
+--portal-gun-beam-one: #AFD16A;
+--portal-gun-beam-two: #629747;
+--portal-gun-beam-three: #5D9E39;
+--portal-gun-handle: #C4C7CA;
+--rick-skin: #C1B8B4;
+--rick-hair: #B7D8EB;
+--rick-mouth:#792F28;
+--rick-teeth: #D4CB8D;
+--rick-coat: #fff;
+--morty-skin: #F2CFB3;
+--morty-mouth: #61302E;
+--morty-top: #F0ED81; */
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -43,18 +66,22 @@ body {
 
 header {
     width: 100%;
+}
+
+.header-container {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
 }
 
-.header-container {
-    width: 100%;
+.header-container a {
+    /* width: 100%; */
     position: absolute;
     background-image: url("./assets/svg/Rick_and_Morty_logo.svg");
     background-repeat: no-repeat;
     background-size: contain;
+    text-decoration: none;
     height: 270px;
     width: 400px;
     background-position: center 145px;
@@ -92,7 +119,6 @@ header {
     color: inherit;
     text-shadow: inherit;
     font-family: "schwifty";
-    /* width: 180px; */
     display: inline-block;
     padding: 7px 20px;
     text-align: center;
@@ -100,8 +126,6 @@ header {
     transition: all 250ms;
     border: 0;
     font-size: 16px;
-    user-select: none;
-    -webkit-user-select: none;
     touch-action: manipulation;
 }
 
@@ -118,31 +142,8 @@ header {
 .quote {
     transition: all 0.5s ease-in-out;
     text-align: center;
-    width: 60%;
+    width: 90%;
 }
-
-
-/* --highlight: #D6DC22;
---outline-width: 0.25em;
---portal-gun-light: #7C858A;
---portal-gun-dark: #5D676F;
---portal-gun-glass: #397A33;
---portal-gun-glass-transparent: rgba(172,
-195,
-138,
-0.7);
---portal-gun-beam-one: #AFD16A;
---portal-gun-beam-two: #629747;
---portal-gun-beam-three: #5D9E39;
---portal-gun-handle: #C4C7CA;
---rick-skin: #C1B8B4;
---rick-hair: #B7D8EB;
---rick-mouth:#792F28;
---rick-teeth: #D4CB8D;
---rick-coat: #fff;
---morty-skin: #F2CFB3;
---morty-mouth: #61302E;
---morty-top: #F0ED81; */
 
 .footer {
     display: flex;
