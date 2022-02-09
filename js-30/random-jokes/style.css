@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "WubbaLubbaDubDub";
+    src: url("./assets/fonts/WubbaLubbaDubDub.ttf");
+}
+
+@font-face {
+    font-family: "schwifty";
+    src: url("./assets/fonts/get_schwifty.ttf");
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -14,16 +24,6 @@ p {
     -webkit-text-stroke: 0.1px rgba(0, 0, 0, 0.9);
 }
 
-@font-face {
-    font-family: "WubbaLubbaDubDub";
-    src: url("./assets/fonts/WubbaLubbaDubDub.ttf");
-}
-
-@font-face {
-    font-family: "schwifty";
-    src: url("./assets/fonts/get_schwifty.ttf");
-}
-
 body {
     color: #5ddbe8;
     text-shadow: -1px 0 black, 2px 0 rgb(146, 240, 107, 0.9), 1px 0 rgb(146, 240, 107, 0.9), 1px 0 rgb(146, 240, 107, 0.9);
@@ -31,8 +31,14 @@ body {
     -webkit-text-stroke: 0.1px rgba(0, 0, 0, 0.7);
     margin: 0 auto;
     background-color: black;
-    width: 100%;
     font-family: "WubbaLubbaDubDub";
+    width: 90%;
+}
+
+@media(max-width: 1105px) {
+    body {
+        width: 100%;
+    }
 }
 
 header {
@@ -44,6 +50,7 @@ header {
 }
 
 .header-container {
+    width: 100%;
     position: absolute;
     background-image: url("./assets/svg/Rick_and_Morty_logo.svg");
     background-repeat: no-repeat;
@@ -51,6 +58,16 @@ header {
     height: 270px;
     width: 400px;
     background-position: center 145px;
+}
+
+.header-container:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+    -webkit-transition: all .5s ease-out 0.2s;
+    -moz-transition: all .5s ease-out 0.2s;
+    -ms-transition: all .5s ease-out 0.2s;
+    -o-transition: all .5s ease-out 0.2s;
 }
 
 .main-container {
@@ -62,7 +79,7 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     height: calc(100vh - 45px);
-    max-width: 1440px;
+    max-width: 1105px;
 }
 
 .btn {
@@ -98,6 +115,12 @@ header {
     -o-transform: scale(1.05) rotate(-1deg);
 }
 
+.quote {
+    transition: all 0.5s ease-in-out;
+    text-align: center;
+    width: 60%;
+}
+
 
 /* --highlight: #D6DC22;
 --outline-width: 0.25em;
@@ -125,7 +148,7 @@ header {
     display: flex;
     justify-content: center;
     padding: 5px auto;
-    max-width: 1440px;
+    max-width: 1105px;
 }
 
 .footer-container {
@@ -134,12 +157,6 @@ header {
     align-items: center;
     width: 80%;
     margin: 10px 0;
-}
-
-@media(max-width: 950px) {
-    .footer-container {
-        width: 100%;
-    }
 }
 
 .footer-data {
