@@ -8,6 +8,12 @@ a {
     color: #5ddbe8;
 }
 
+p {
+    text-shadow: 1px 0 black, 2px 0 rgb(146, 240, 107, 0.9);
+    /* text-shadow: 1px 1px 2px black, 0 0 5px #92f06b; */
+    -webkit-text-stroke: 0.1px rgba(0, 0, 0, 0.9);
+}
+
 @font-face {
     font-family: "WubbaLubbaDubDub";
     src: url("./assets/fonts/WubbaLubbaDubDub.ttf");
@@ -20,18 +26,76 @@ a {
 
 body {
     color: #5ddbe8;
-    text-shadow: -1px 0 black, 1.5px 0 rgb(146, 240, 107, 0.9);
+    text-shadow: -1px 0 black, 2px 0 rgb(146, 240, 107, 0.9), 1px 0 rgb(146, 240, 107, 0.9), 1px 0 rgb(146, 240, 107, 0.9);
     /* text-shadow: 1px 1px 2px black, 0 0 5px #92f06b; */
     -webkit-text-stroke: 0.1px rgba(0, 0, 0, 0.7);
     margin: 0 auto;
+    background-color: black;
+    width: 100%;
     font-family: "WubbaLubbaDubDub";
 }
 
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.header-container {
+    position: absolute;
+    background-image: url("./assets/svg/Rick_and_Morty_logo.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 270px;
+    width: 400px;
+    background-position: center 145px;
+}
+
 .main-container {
-    background-image: url("./assets/img/bgstars.png");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("./assets/img/rick_and_morty-2.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 45px);
+    max-width: 1440px;
+}
+
+.btn {
+    position: absolute;
+    top: 170px;
+    background-color: #F0ED81;
+    border-radius: 100px;
+    box-shadow: rgba(44, 187, 99, .6) 0 -25px 18px -14px inset, rgba(44, 187, 99, .6) 0 1px 2px, rgba(44, 187, 99, .5) 0 2px 4px, rgba(44, 187, 99, .7) 0 4px 8px, rgba(44, 187, 99, .5) 0 8px 16px, rgba(44, 187, 99, .6) 0 16px 32px;
+    cursor: pointer;
+    color: inherit;
+    text-shadow: inherit;
+    font-family: "schwifty";
+    /* width: 180px; */
+    display: inline-block;
+    padding: 7px 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 250ms;
+    border: 0;
+    font-size: 16px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.btn:hover {
+    text-shadow: 1px 1px 2px black, 0 0 5px #92f06b;
+    -webkit-text-stroke: 0.1px rgba(0, 0, 0, 0.7);
+    transform: scale(1.05) rotate(-1deg);
+    -webkit-transform: scale(1.05) rotate(-1deg);
+    -moz-transform: scale(1.05) rotate(-1deg);
+    -ms-transform: scale(1.05) rotate(-1deg);
+    -o-transform: scale(1.05) rotate(-1deg);
 }
 
 
@@ -61,15 +125,15 @@ body {
     display: flex;
     justify-content: center;
     padding: 5px auto;
-    background-color: black;
+    max-width: 1440px;
 }
 
 .footer-container {
     display: flex;
     justify-content: space-between;
-    max-width: 1590px;
+    align-items: center;
     width: 80%;
-    margin: 25px 0;
+    margin: 10px 0;
 }
 
 @media(max-width: 950px) {
@@ -88,17 +152,21 @@ body {
 }
 
 .github {
+    text-decoration: inherit;
     text-decoration: none;
     transition: 0.3s;
 }
 
 .github:hover {
-    filter: brightness(0) saturate(100%) invert(93%) sepia(41%) saturate(4387%) hue-rotate(148deg) brightness(94%) contrast(91%);
+    transform: scale(1.1);
+    transition: 0.2s;
+    cursor: pointer;
+    /* filter: brightness(0) saturate(100%) invert(97%) sepia(15%) saturate(5350%) hue-rotate(349deg) brightness(95%) contrast(79%); */
 }
 
 .rss-logo {
-    width: 135px;
-    height: 50px;
+    width: 70px;
+    height: 25px;
     background-image: url("./assets/svg/rss.svg");
     background-repeat: no-repeat;
     background-size: contain;
@@ -106,5 +174,8 @@ body {
 }
 
 .rss-logo:hover {
-    filter: brightness(0) saturate(100%) invert(93%) sepia(41%) saturate(4387%) hue-rotate(148deg) brightness(94%) contrast(91%);
+    transform: scale(1.1);
+    transition: 0.2s;
+    cursor: pointer;
+    filter: brightness(0) saturate(100%) invert(97%) sepia(15%) saturate(5350%) hue-rotate(349deg) brightness(95%) contrast(79%);
 }
