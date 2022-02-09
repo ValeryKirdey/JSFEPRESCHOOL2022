@@ -1,0 +1,199 @@
+@font-face {
+    font-family: "WubbaLubbaDubDub";
+    src: url("./assets/fonts/WubbaLubbaDubDub.ttf");
+}
+
+@font-face {
+    font-family: "schwifty";
+    src: url("./assets/fonts/get_schwifty.ttf");
+}
+
+
+/* --highlight: #D6DC22;
+--outline-width: 0.25em;
+--portal-gun-light: #7C858A;
+--portal-gun-dark: #5D676F;
+--portal-gun-glass: #397A33;
+--portal-gun-glass-transparent: rgba(172,
+195,
+138,
+0.7);
+--portal-gun-beam-one: #AFD16A;
+--portal-gun-beam-two: #629747;
+--portal-gun-beam-three: #5D9E39;
+--portal-gun-handle: #C4C7CA;
+--rick-skin: #C1B8B4;
+--rick-hair: #B7D8EB;
+--rick-mouth:#792F28;
+--rick-teeth: #D4CB8D;
+--rick-coat: #fff;
+--morty-skin: #F2CFB3;
+--morty-mouth: #61302E;
+--morty-top: #F0ED81; */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: #5ddbe8;
+}
+
+p {
+    text-shadow: 1px 0 black, 2px 0 rgb(146, 240, 107, 0.9);
+    /* text-shadow: 1px 1px 2px black, 0 0 5px #92f06b; */
+    -webkit-text-stroke: 0.1px rgba(0, 0, 0, 0.9);
+}
+
+body {
+    color: #5ddbe8;
+    text-shadow: -1px 0 black, 2px 0 rgb(146, 240, 107, 0.9), 1px 0 rgb(146, 240, 107, 0.9), 1px 0 rgb(146, 240, 107, 0.9);
+    /* text-shadow: 1px 1px 2px black, 0 0 5px #92f06b; */
+    -webkit-text-stroke: 0.1px rgba(0, 0, 0, 0.7);
+    margin: 0 auto;
+    background-color: black;
+    font-family: "WubbaLubbaDubDub";
+    width: 90%;
+}
+
+@media(max-width: 1105px) {
+    body {
+        width: 100%;
+    }
+}
+
+header {
+    width: 100%;
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.header-container a {
+    /* width: 100%; */
+    position: absolute;
+    background-image: url("./assets/svg/Rick_and_Morty_logo.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-decoration: none;
+    height: 270px;
+    width: 400px;
+    background-position: center 145px;
+}
+
+.header-container:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+    -webkit-transition: all .5s ease-out 0.2s;
+    -moz-transition: all .5s ease-out 0.2s;
+    -ms-transition: all .5s ease-out 0.2s;
+    -o-transition: all .5s ease-out 0.2s;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("./assets/img/rick_and_morty-2.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100vh - 45px);
+    max-width: 1105px;
+}
+
+.btn {
+    position: absolute;
+    top: 170px;
+    background-color: #F0ED81;
+    border-radius: 100px;
+    box-shadow: rgba(44, 187, 99, .6) 0 -25px 18px -14px inset, rgba(44, 187, 99, .6) 0 1px 2px, rgba(44, 187, 99, .5) 0 2px 4px, rgba(44, 187, 99, .7) 0 4px 8px, rgba(44, 187, 99, .5) 0 8px 16px, rgba(44, 187, 99, .6) 0 16px 32px;
+    cursor: pointer;
+    color: inherit;
+    text-shadow: inherit;
+    font-family: "schwifty";
+    display: inline-block;
+    padding: 7px 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 250ms;
+    border: 0;
+    font-size: 16px;
+    touch-action: manipulation;
+}
+
+.btn:hover {
+    text-shadow: 1px 1px 2px black, 0 0 5px #92f06b;
+    -webkit-text-stroke: 0.1px rgba(0, 0, 0, 0.7);
+    transform: scale(1.05) rotate(-1deg);
+    -webkit-transform: scale(1.05) rotate(-1deg);
+    -moz-transform: scale(1.05) rotate(-1deg);
+    -ms-transform: scale(1.05) rotate(-1deg);
+    -o-transform: scale(1.05) rotate(-1deg);
+}
+
+.quote {
+    transition: all 0.5s ease-in-out;
+    text-align: center;
+    width: 90%;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    padding: 5px auto;
+    max-width: 1105px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 10px 0;
+}
+
+.footer-data {
+    display: flex;
+    align-items: center;
+}
+
+.footer-data p {
+    margin-right: 15px;
+}
+
+.github {
+    text-decoration: inherit;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.github:hover {
+    transform: scale(1.1);
+    transition: 0.2s;
+    cursor: pointer;
+    /* filter: brightness(0) saturate(100%) invert(97%) sepia(15%) saturate(5350%) hue-rotate(349deg) brightness(95%) contrast(79%); */
+}
+
+.rss-logo {
+    width: 70px;
+    height: 25px;
+    background-image: url("./assets/svg/rss.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: 0.3s;
+}
+
+.rss-logo:hover {
+    transform: scale(1.1);
+    transition: 0.2s;
+    cursor: pointer;
+    filter: brightness(0) saturate(100%) invert(97%) sepia(15%) saturate(5350%) hue-rotate(349deg) brightness(95%) contrast(79%);
+}
