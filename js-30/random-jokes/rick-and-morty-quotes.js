@@ -131,6 +131,7 @@ let quotes = [
     "It's the hardest working liver in the Galaxy, Morty, and now it has a hole in it."
 ]
 
+
 function wubbaLubbaDubDub() {
     const randomEl = Math.floor(Math.random() * quotes.length);
     if (quotes[randomEl] === undefined) {

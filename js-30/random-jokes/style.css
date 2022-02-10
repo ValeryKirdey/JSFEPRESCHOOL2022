@@ -38,6 +38,8 @@ body {
 }
 
 header {
+    display: flex;
+    justify-content: center;
     width: 100%;
 }
 
@@ -116,14 +118,13 @@ header {
     transition: all 0.5s ease-in-out;
     text-align: center;
     width: 90%;
+    margin-top: 35px
 }
 
 .footer {
     display: flex;
     justify-content: center;
     padding: 5px auto;
-    max-width: 0 auto;
-    /*  !!!!!!!! */
 }
 
 .footer-container {
@@ -196,18 +197,24 @@ header {
         padding: 10px 25px;
         top: 135px;
     }
+    .quote {
+        font-size: 55px;
+    }
 }
 
 @media(min-width: 1440px) {
     .header-container a {
-        height: 360px;
-        width: 400px;
-        background-position: center 185px;
+        height: 400px;
+        width: 640px;
+        background-position: center 200px;
     }
     .btn {
-        top: 170px;
-        font-size: 20px;
-        padding: 10px 25px;
+        top: 260px;
+        font-size: 40px;
+        padding: 13px 30px;
+    }
+    .quote {
+        font-size: 75px;
     }
 }
 
