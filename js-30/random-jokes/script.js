@@ -1,7 +1,7 @@
 const audio = new Audio();
 const btnPlay = document.querySelector('.btn');
 
-function playSong() {
+function burp() {
     audio.src = './assets/audio/Burp-A1-www.fesliyanstudios.com.mp3';
     let isPlay = false
     if (!isPlay) {
@@ -9,7 +9,7 @@ function playSong() {
     }
 }
 
-btnPlay.addEventListener('click', playSong);
+btnPlay.addEventListener('click', burp);
 
 
 //-----------------------------------------------------

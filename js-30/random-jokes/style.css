@@ -8,29 +8,6 @@
     src: url("./assets/fonts/get_schwifty.ttf");
 }
 
-
-/* --highlight: #D6DC22;
---outline-width: 0.25em;
---portal-gun-light: #7C858A;
---portal-gun-dark: #5D676F;
---portal-gun-glass: #397A33;
---portal-gun-glass-transparent: rgba(172,
-195,
-138,
-0.7);
---portal-gun-beam-one: #AFD16A;
---portal-gun-beam-two: #629747;
---portal-gun-beam-three: #5D9E39;
---portal-gun-handle: #C4C7CA;
---rick-skin: #C1B8B4;
---rick-hair: #B7D8EB;
---rick-mouth:#792F28;
---rick-teeth: #D4CB8D;
---rick-coat: #fff;
---morty-skin: #F2CFB3;
---morty-mouth: #61302E;
---morty-top: #F0ED81; */
-
 * {
     box-sizing: border-box;
     padding: 0;
@@ -55,13 +32,9 @@ body {
     margin: 0 auto;
     background-color: black;
     font-family: "WubbaLubbaDubDub";
-    width: 90%;
-}
-
-@media(max-width: 1105px) {
-    body {
-        width: 100%;
-    }
+    font-size: 20px;
+    min-width: 768px;
+    width: 100%;
 }
 
 header {
@@ -82,9 +55,9 @@ header {
     background-repeat: no-repeat;
     background-size: contain;
     text-decoration: none;
-    height: 270px;
-    width: 400px;
-    background-position: center 145px;
+    height: 385px;
+    width: 290px;
+    background-position: center 200px;
 }
 
 .header-container:hover {
@@ -106,12 +79,12 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     height: calc(100vh - 45px);
-    max-width: 1105px;
+    max-width: 2550px;
 }
 
 .btn {
     position: absolute;
-    top: 170px;
+    top: 100px;
     background-color: #F0ED81;
     border-radius: 100px;
     box-shadow: rgba(44, 187, 99, .6) 0 -25px 18px -14px inset, rgba(44, 187, 99, .6) 0 1px 2px, rgba(44, 187, 99, .5) 0 2px 4px, rgba(44, 187, 99, .7) 0 4px 8px, rgba(44, 187, 99, .5) 0 8px 16px, rgba(44, 187, 99, .6) 0 16px 32px;
@@ -120,12 +93,12 @@ header {
     text-shadow: inherit;
     font-family: "schwifty";
     display: inline-block;
-    padding: 7px 20px;
+    padding: 7px 15px;
     text-align: center;
     text-decoration: none;
     transition: all 250ms;
     border: 0;
-    font-size: 16px;
+    font-size: 20px;
     touch-action: manipulation;
 }
 
@@ -149,7 +122,8 @@ header {
     display: flex;
     justify-content: center;
     padding: 5px auto;
-    max-width: 1105px;
+    max-width: 0 auto;
+    /*  !!!!!!!! */
 }
 
 .footer-container {
@@ -184,7 +158,7 @@ header {
 
 .rss-logo {
     width: 70px;
-    height: 25px;
+    height: 30px;
     background-image: url("./assets/svg/rss.svg");
     background-repeat: no-repeat;
     background-size: contain;
@@ -196,4 +170,74 @@ header {
     transition: 0.2s;
     cursor: pointer;
     filter: brightness(0) saturate(100%) invert(97%) sepia(15%) saturate(5350%) hue-rotate(349deg) brightness(95%) contrast(79%);
+}
+
+@media(min-width: 768px) {
+    .header-container a {
+        height: 360px;
+        width: 400px;
+        background-position: center 185px;
+    }
+    .btn {
+        font-size: 20px;
+        padding: 10px 25px;
+        top: 135px;
+    }
+}
+
+@media(min-width: 1100px) {
+    .header-container a {
+        height: 360px;
+        width: 400px;
+        background-position: center 185px;
+    }
+    .btn {
+        font-size: 20px;
+        padding: 10px 25px;
+        top: 135px;
+    }
+}
+
+@media(min-width: 1440px) {
+    .header-container a {
+        height: 360px;
+        width: 400px;
+        background-position: center 185px;
+    }
+    .btn {
+        top: 170px;
+        font-size: 20px;
+        padding: 10px 25px;
+    }
+}
+
+@media(min-width: 2550px) {
+    body {
+        font-size: xxx-large;
+        line-height: 1;
+    }
+    .header-container a {
+        height: 478px;
+        width: 750px;
+        background-position: center 250px;
+    }
+    .main-container {
+        height: calc(100vh - 115px);
+        max-width: 2550px;
+    }
+    .btn {
+        top: 260px;
+        font-size: 45px;
+        padding: 15px 35px;
+    }
+    .footer {
+        max-width: 2550px;
+    }
+    .footer-data {
+        font-size: xx-large;
+    }
+    .rss-logo {
+        width: 135px;
+        height: 45px;
+    }
 }

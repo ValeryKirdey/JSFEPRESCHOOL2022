@@ -1,8 +1,8 @@
 let btn = document.getElementById('btn');
-btn.addEventListener('click', gen);
-let pun = document.getElementById('quote');
+btn.addEventListener('click', wubbaLubbaDubDub);
+let rick = document.getElementById('quote');
 
-let dadJokes = [
+let quotes = [
     "Ohh yea, you gotta get schwifty. -Rick",
     "He's not pressing charges… That's gotta be the \"you shot me\" equivalent of not being mad. -Rick",
     "Get off the high road Summer. We all got pink eye because you wouldn't stop texting on the toilet. -Rick",
@@ -131,11 +131,11 @@ let dadJokes = [
     "It's the hardest working liver in the Galaxy, Morty, and now it has a hole in it."
 ]
 
-function gen() {
-    const randomEl = Math.floor(Math.random() * dadJokes.length);
-    if (dadJokes[randomEl] === undefined) {
+function wubbaLubbaDubDub() {
+    const randomEl = Math.floor(Math.random() * quotes.length);
+    if (quotes[randomEl] === undefined) {
         console.log('wait a second');
     }
-    pun.innerText = `${dadJokes[randomEl]}`;
-    dadJokes.splice(randomEl, 1);
+    rick.innerText = `${quotes[randomEl]}`;
+    quotes.splice(randomEl, 1);
 }
