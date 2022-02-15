@@ -1,6 +1,8 @@
 import { layGround, moveGround } from "./ground.js"
-import { startNinja, moveNinja, getNinjaHitBox, ninjaHit } from "./avatar.js"
+import { startZmagar, moveZmagar, getZmagarHitBox, zmagarHit } from "./zmagar.js"
 import { setUpObstacle, moveObstacle, getObstacleHitBox } from "./omon.js"
+import { setUpClouds, moveClouds } from "./clouds.js"
+
 
 // acitvates the auto-sizing of the game world in window at first launch
 setWorldScale()
@@ -15,6 +17,7 @@ let gameRateIncrease = .00001 // incremental value that determines the speed of 
 let startSpeed = 100 // initial rate of asset movement
 let score // determines current score
 let startScreen = document.querySelector(".start-screen")
+    // let endScreen = document.querySelector(".end-screen")
 let scoreText = document.querySelector(".score")
 
 // auto resizes the game world inside window
@@ -42,11 +45,13 @@ function startGame(e) {
 
     previousFrame = null
     layGround()
-    startNinja()
+    startZmagar()
     setUpObstacle()
+    setUpClouds()
     gameSpeed = 1.25
     score = 0
     startScreen.remove()
+        // endScreen.remove()
     window.requestAnimationFrame(update)
 }
 
@@ -61,8 +66,9 @@ function update(frame) {
     increaseGameSpeed(currentFrame)
 
     moveGround(currentFrame, gameSpeed)
-    moveNinja(startSpeed, currentFrame)
+    moveZmagar(startSpeed, currentFrame)
     moveObstacle(currentFrame, gameSpeed)
+    moveClouds(currentFrame, gameSpeed)
     updateScore(currentFrame)
 
     if (checkLose()) { return loseGame() }
@@ -71,7 +77,7 @@ function update(frame) {
     window.requestAnimationFrame(update)
 }
 
-// increments the speed of obstacles, ground movement, and ninja run speed in proportion to gameRateIncrease variable
+// increments the speed of obstacles, ground movement, and Zmagar run speed in proportion to gameRateIncrease variable
 function increaseGameSpeed(currentTime) {
     gameSpeed += currentTime * gameRateIncrease
     startSpeed += gameSpeed * -.01
@@ -83,7 +89,7 @@ function updateScore(currentFrame) {
     scoreText.textContent = "Score: " + Math.floor(score)
 }
 
-// checks if any obstacles have collided with the ninja
+// checks if any obstacles have collided with the Zmagar
 function checkCollision(asset1, asset2) {
     return (
         asset1.left < asset2.right &&
@@ -94,15 +100,15 @@ function checkCollision(asset1, asset2) {
 
 }
 
-// activates lose if any obstacles have collided with the ninja
+// activates lose if any obstacles have collided with the Zmagar
 function checkLose() {
-    let ninjaHitBox = getNinjaHitBox()
-    return getObstacleHitBox().some(hitBox => checkCollision(hitBox, ninjaHitBox))
+    let zmagarHitBox = getZmagarHitBox()
+    return getObstacleHitBox().some(hitBox => checkCollision(hitBox, zmagarHitBox))
 }
 
 // handles the stopping of the game and the reset after losing
 function loseGame() {
-    ninjaHit()
+    zmagarHit()
     setTimeout(() => {
         document.addEventListener("keydown", startGame, { once: true })
     }, 100)

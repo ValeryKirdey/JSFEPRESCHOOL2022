@@ -1,41 +1,40 @@
 import { incrementAssetProp, getAssetProp, setAssetProp } from "./updateLevel.js"
 
-let ninja = document.querySelector(".belarus")
+let zmagar = document.querySelector(".zmagar")
 let jumpSpeed = .45 // sets vertical jump speed
 let gravity = .0015 // sets vertical fall speed
 let yVelocity // sets vertical movement up on jump
-let isJumping // determines whether ninja is actively jumping
+let isJumping // determines whether Zmagar is actively jumping
 let currentImage = 0 // initializes running animation frame
 
-// contains assets for ninja running animation
-let ninjaRunningFrames = [
-    "./assets/img/avatar.png",
-    "./assets/img/avatar.png",
-    "./assets/img/avatar.png",
-    "./assets/img/avatar.png",
-    "./assets/img/avatar.png",
-    "./assets/img/avatar.png",
+// contains assets for Zmagar running animation
+let zmagarRunningFrames = [
+    "./assets/img/zmagar/zmagar_1.png",
+    "./assets/img/zmagar/zmagar_2.png",
+    "./assets/img/zmagar/zmagar_3.png",
+    "./assets/img/zmagar/zmagar_4.png",
+    "./assets/img/zmagar/zmagar_5.png",
 ]
 
-// handles initial ninja behavior at start and restart
-export function startNinja() {
+// handles initial Zmagar behavior at start and restart
+export function startZmagar() {
     isJumping = false
     yVelocity = 0
-    setAssetProp(ninja, "--bottom", 20)
+    setAssetProp(zmagar, "--bottom", 20)
     document.removeEventListener("keydown", onJump)
     document.addEventListener("keydown", onJump)
 }
 
-// handles seperate ninja behaviors during game
-export function moveNinja(startSpeed, currentTime) {
+// handles seperate Zmagar behaviors during game
+export function moveZmagar(startSpeed, currentTime) {
     cycleRun(startSpeed)
-    jumpNinja(currentTime)
+    jumpZmagar(currentTime)
 }
 
-// handles ninja running animation
+// handles Zmagar running animation
 export async function cycleRun(interval) {
     if (isJumping) return
-    if (currentImage < ninjaRunningFrames.length - 1) {
+    if (currentImage < zmagarRunningFrames.length - 1) {
         if (currentImage === 0) {
             await setTimeout(function() {
                 currentImage = 1
@@ -66,39 +65,39 @@ export async function cycleRun(interval) {
             currentImage = 0
         }, interval)
     }
-    ninja.src = ninjaRunningFrames[currentImage]
+    zmagar.src = zmagarRunningFrames[currentImage]
 }
 
-// handles ninja vertical movement behavior on jump
-function jumpNinja(currentFrame) {
+// handles Zmagar vertical movement behavior on jump
+function jumpZmagar(currentFrame) {
     if (!isJumping) return
 
-    incrementAssetProp(ninja, "--bottom", yVelocity * currentFrame)
+    incrementAssetProp(zmagar, "--bottom", yVelocity * currentFrame)
 
-    if (getAssetProp(ninja, "--bottom") <= 20) {
-        setAssetProp(ninja, "--bottom", 20)
+    if (getAssetProp(zmagar, "--bottom") <= 20) {
+        setAssetProp(zmagar, "--bottom", 20)
         isJumping = false
     }
 
     yVelocity -= gravity * currentFrame
 }
 
-// handles ninja appearance and determines variable value on jump
+// handles Zmagar appearance and determines variable value on jump
 function onJump(e) {
     if (isJumping || e.code !== "Space") return
 
-    ninja.src = "./assets/img/avatar.png"
+    zmagar.src = "./assets/img/zmagar_jump.png"
 
     yVelocity = jumpSpeed
     isJumping = true
 }
 
-// defines ninja element's outline for collision check
-export function getNinjaHitBox() {
-    return ninja.getBoundingClientRect()
+// defines Zmagar element's outline for collision check
+export function getZmagarHitBox() {
+    return zmagar.getBoundingClientRect()
 }
 
-// changes ninja's appearance on lose
-export function ninjaHit() {
-    ninja.src = "./assets/img/avatar.png"
+// changes Zmagar's appearance on lose
+export function zmagarHit() {
+    zmagar.src = "./assets/img/zmagar.png"
 }
