@@ -113,3 +113,35 @@ function loseGame() {
         document.addEventListener("keydown", startGame, { once: true })
     }, 100)
 }
+let gameOvers = false;
+
+function loop() {
+    if (gameOvers === false && gamePaused == false) {
+        if (game.lives === 0) {
+            var cv = localStorage.getItem("highestScore");
+            if (!cv) {
+                localStorage.setItem("highestScore", game.score.toString());
+            } else {
+                if (parseInt(cv) > game.score) {} else if (parseInt(cv) < game.score) {
+                    localStorage.removeItem("highestScore");
+                    localStorage.setItem("highestScore", game.score.toString());
+                }
+            }
+            gameOvers = true;
+        }
+    }
+}
+
+// let highestScore = localStorage.getItem("highestScore");
+// let btn = document.getElementById("resume");
+// let currentScore = document.getElementById("score");
+// let highestScores = document.getElementById("score2");
+// if (!highestScore) {
+//     highestScore = "0";
+// }
+// currentScore.textContent = "CURRENT SCORE : " + game.score;
+// highestScores.textContent = "HIGHEST SCORE : " + highestScore;
+// popup.style.display = "block";
+// btn === null || btn === void 0 ? void 0 : btn.addEventListener("click", () => {
+//     location.reload();
+// });
