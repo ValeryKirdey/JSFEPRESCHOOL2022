@@ -8,29 +8,6 @@
     src: url("./assets/fonts/get_schwifty.ttf");
 }
 
-
-/* --highlight: #D6DC22;
---outline-width: 0.25em;
---portal-gun-light: #7C858A;
---portal-gun-dark: #5D676F;
---portal-gun-glass: #397A33;
---portal-gun-glass-transparent: rgba(172,
-195,
-138,
-0.7);
---portal-gun-beam-one: #AFD16A;
---portal-gun-beam-two: #629747;
---portal-gun-beam-three: #5D9E39;
---portal-gun-handle: #C4C7CA;
---rick-skin: #C1B8B4;
---rick-hair: #B7D8EB;
---rick-mouth:#792F28;
---rick-teeth: #D4CB8D;
---rick-coat: #fff;
---morty-skin: #F2CFB3;
---morty-mouth: #61302E;
---morty-top: #F0ED81; */
-
 * {
     box-sizing: border-box;
     padding: 0;
@@ -95,6 +72,47 @@ header {
     -moz-transition: all .5s ease-out 0.2s;
     -ms-transition: all .5s ease-out 0.2s;
     -o-transition: all .5s ease-out 0.2s;
+}
+
+.lang {
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    display: flex;
+    justify-content: center;
+    margin: 0, auto;
+}
+
+.ru {
+    color: #5ddbe8;
+    margin-right: 10px;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.ru:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+.en {
+    color: #5ddbe8;
+    margin-left: 10px;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.en:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+.active {
+    font-size: 40px;
+    color: #F0ED81;
+}
+
+span {
+    color: #5ddbe8;
+    font-size: 40px;
 }
 
 .main-container {
