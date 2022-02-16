@@ -1,0 +1,175 @@
+import { layGround, moveGround } from "./ground.js"
+import { startZmagar, moveZmagar, getZmagarHitBox, zmagarHit } from "./zmagar.js"
+import { setUpObstacle, moveObstacle, getObstacleHitBox } from "./omon.js"
+import { setUpClouds, moveClouds } from "./clouds.js"
+
+
+// acitvates the auto-sizing of the game world in window at first launch
+setWorldScale()
+window.addEventListener("resize", setWorldScale)
+
+document.addEventListener("keydown", startGame, { once: true })
+
+let previousFrame // used for determination of time between window fram updates
+let currentFrame // value of time between window frame updates
+let gameSpeed // determines current rate of game movement
+let gameRateIncrease = .00001 // incremental value that determines the speed of game speed increase
+let startSpeed = 100 // initial rate of asset movement
+let score // determines current score
+let startScreen = document.querySelector(".start-screen")
+    // let endScreen = document.querySelector(".end-screen")
+let scoreText = document.querySelector(".score")
+
+// auto resizes the game world inside window
+function setWorldScale() {
+    let worldScale
+    let worldWidth = 100
+    let worldHeight = 30
+    const worldSize = document.querySelector(".world")
+    if (window.innerWidth / window.innerHeight < worldWidth / worldHeight) {
+        worldScale = window.innerWidth / worldWidth
+    } else {
+        worldScale = window.innerHeight / worldHeight
+    }
+
+    worldSize.style.width = `${worldWidth * worldScale}px`
+    worldSize.style.height = `${worldHeight * worldScale}px`
+}
+
+// resets all variables and assets, starts score and game mechanics
+function startGame(e) {
+    if (e.code !== "Space") {
+        document.addEventListener("keydown", startGame, { once: true })
+        return
+    }
+
+    previousFrame = null
+    layGround()
+    startZmagar()
+    setUpObstacle()
+    setUpClouds()
+    gameSpeed = 1.25
+    score = 0
+    startScreen.remove()
+        // endScreen.remove()
+    window.requestAnimationFrame(update)
+}
+
+// Updates each aspect of the game in ratio to browser update speed
+function update(frame) {
+    if (previousFrame == null) {
+        previousFrame = frame
+        window.requestAnimationFrame(update)
+        return
+    }
+    currentFrame = frame - previousFrame
+    increaseGameSpeed(currentFrame)
+
+    moveGround(currentFrame, gameSpeed)
+    moveZmagar(startSpeed, currentFrame)
+    moveObstacle(currentFrame, gameSpeed)
+    moveClouds(currentFrame, gameSpeed)
+    updateScore(currentFrame)
+
+    if (checkLose()) { return loseGame() }
+
+    previousFrame = frame
+    window.requestAnimationFrame(update)
+}
+
+// increments the speed of obstacles, ground movement, and Zmagar run speed in proportion to gameRateIncrease variable
+function increaseGameSpeed(currentTime) {
+    gameSpeed += currentTime * gameRateIncrease
+    startSpeed += gameSpeed * -.01
+}
+
+// calculates score variable and updates the score DOM element
+function updateScore(currentFrame) {
+    score += currentFrame * .01
+    scoreText.textContent = "Score: " + Math.floor(score)
+}
+
+// checks if any obstacles have collided with the Zmagar
+function checkCollision(asset1, asset2) {
+    return (
+        asset1.left < asset2.right &&
+        asset1.top < asset2.bottom &&
+        asset1.right > asset2.left &&
+        asset1.bottom > asset2.top
+    )
+
+}
+
+// activates lose if any obstacles have collided with the Zmagar
+function checkLose() {
+    let zmagarHitBox = getZmagarHitBox()
+    return getObstacleHitBox().some(hitBox => checkCollision(hitBox, zmagarHitBox))
+}
+
+// handles the stopping of the game and the reset after losing
+function loseGame() {
+    zmagarHit()
+    setTimeout(() => {
+        document.addEventListener("keydown", startGame, { once: true })
+    }, 100)
+}
+let gameOvers = false;
+
+function loop() {
+    if (gameOvers === false && gamePaused == false) {
+        if (game.lives === 0) {
+            var cv = localStorage.getItem("highestScore");
+            if (!cv) {
+                localStorage.setItem("highestScore", game.score.toString());
+            } else {
+                if (parseInt(cv) > game.score) {} else if (parseInt(cv) < game.score) {
+                    localStorage.removeItem("highestScore");
+                    localStorage.setItem("highestScore", game.score.toString());
+                }
+            }
+            gameOvers = true;
+        }
+    }
+}
+
+// let highestScore = localStorage.getItem("highestScore");
+// let btn = document.getElementById("resume");
+// let currentScore = document.getElementById("score");
+// let highestScores = document.getElementById("score2");
+// if (!highestScore) {
+//     highestScore = "0";
+// }
+// currentScore.textContent = "CURRENT SCORE : " + game.score;
+// highestScores.textContent = "HIGHEST SCORE : " + highestScore;
+// popup.style.display = "block";
+// btn === null || btn === void 0 ? void 0 : btn.addEventListener("click", () => {
+//     location.reload();
+// });
+"use strict"
+(function(namespace) {
+    var SCORE_FACTOR = 0.1;
+
+    function formatOffset(offset) {
+        // TODO pad with zeroes
+        return Math.floor(offset * SCORE_FACTOR);
+    }
+
+    function ScoreBoard(options) {
+        this.scale = options.scale;
+        this.x = options.left;
+        this.y = options.bottom;
+        this.colour = options.colour;
+    }
+
+    ScoreBoard.prototype = Object.create(GameObject.prototype);
+    ScoreBoard.prototype.constructor = ScoreBoard;
+
+    ScoreBoard.prototype.draw = function(context, offset) {
+        context.fillStyle = this.colour;
+        context.font = "16px Courier";
+        context.textAlign = "right";
+        context.fillText(formatOffset(offset), this.x, this.y);
+    };
+
+    namespace.ScoreBoard = ScoreBoard;
+})(window);

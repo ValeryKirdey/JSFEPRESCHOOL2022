@@ -1,38 +1,66 @@
-const audio = new Audio();
-const btnPlay = document.querySelector('.btn');
+const button = document.querySelector(".btn");
+const text = document.querySelector(".quote");
+import { quotes } from "./quotes.js";
+const ru = document.querySelector(".ru");
+const en = document.querySelector(".en");
+const url = 'https://api.whatdoestrumpthink.com/api/v1/quotes/random';
 
-function burp() {
-    audio.src = './assets/audio/Burp-A1-www.fesliyanstudios.com.mp3';
-    let isPlay = false
-    if (!isPlay) {
-        audio.play()
+async function getQuote() {
+    try {
+        const response = await fetch(url)
+        if (!response.ok) {
+            throw Error(response.statusText)
+        }
+        const json = await response.json();
+        displayQuote(json.message);
+    } catch (err) {
+        console.log(err)
+        alert('Failed to fetch new quote');
     }
 }
 
-btnPlay.addEventListener('click', burp);
+function displayQuote(quote) {
+    const quoteText = document.querySelector('.quote');
+    quoteText.textContent = quote;
+}
 
+async function fetchHandler() {
+    try {
+        const response = await fetch();
+        const data = await response.json();
+        text.innerHTML = data.value.joke;
+    } catch (error) {
+        console.log(error);
+    }
+}
+en.classList.add("active");
 
-//-----------------------------------------------------
+const updateRusText = () => {
+    const number = Math.floor(Math.random() * 40);
+    text.innerHTML = quotes[number].text;
+};
 
+ru.addEventListener("click", () => {
+    updateRusText();
+    new Audio("./assets/audio/Burp-A1-www.fesliyanstudios.com.mp3").play();
 
-// function getdata() {
-//     let dataQuote = document.querySelector('.quote');
-// // fetch('http://loremricksum.com/api/')
-// //     .then(response => response.json())
-// //     .then(data => {
-// //         console.log(data)
-// //         datacur.innerHTML = data.value;
-// //     })
-// //     .catch(err => console.error())
+    en.classList.remove("active");
+    ru.classList.add("active");
+});
 
-//     fetch('http://loremricksum.com/api/')
-//         .then((response) => {
-//             return response.json();
-//         })
-//         .then((data) => {
-//             console.log(data);
-//             dataQuote.innerHTML = data.value;
-//         });
+en.addEventListener("click", () => {
+    getQuote();
+    ru.classList.remove("active");
+    en.classList.add("active");
+    new Audio("./assets/audio/Burp-A1-www.fesliyanstudios.com.mp3").play();
+});
 
+button.addEventListener("click", () => {
+    if (ru.classList[1]) {
+        updateRusText();
+    } else {
+        getQuote();
+    }
 
-// }
+    new Audio("./assets/audio/Burp-A1-www.fesliyanstudios.com.mp3").play();
+});

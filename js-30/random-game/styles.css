@@ -1,0 +1,134 @@
+* {
+    user-select: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    min-height: 100vh;
+    max-width: 1440px;
+}
+
+.world {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100vh !important;
+    background-color: rgb(180, 235, 270);
+}
+
+.score {
+    position: absolute;
+    right: 2%;
+    top: 2%;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.25em;
+    z-index: 1;
+}
+
+.start-screen {
+    position: absolute;
+    text-align: center;
+    font-size: 1.75em;
+    width: 460px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    z-index: 1;
+}
+
+.start-screen b {
+    color: red;
+}
+
+.end-screen {
+    position: absolute;
+    text-align: center;
+    font-size: 1.75em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Press Start 2P', cursive;
+    z-index: 1;
+}
+
+.ground {
+    position: absolute;
+    top: 78%;
+    --left: 0;
+    left: calc(var(--left) * 1%);
+    width: 100%;
+}
+
+.zmagar {
+    position: absolute;
+    --bottom: 20;
+    bottom: calc(var(--bottom) * 0.55%);
+    left: 2%;
+    z-index: 1;
+    height: 25%;
+}
+
+.obstacle {
+    position: absolute;
+    left: calc(var(--left) * 1%);
+    bottom: 10%;
+    height: 20%;
+    z-index: 1;
+}
+
+.clouds {
+    position: absolute;
+    left: calc(var(--left) * 1%);
+    top: 10%;
+    height: 20%;
+    z-index: 5;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-container {
+    display: flex;
+    color: #fff;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Press Start 2P', cursive;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.footer-data {
+    display: flex;
+    align-items: center;
+}
+
+.footer-data p {
+    margin-right: 15px;
+}
+
+.github {
+    color: #fff;
+    text-decoration: inherit;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.rss-logo {
+    width: 70px;
+    height: 25px;
+    background-image: url("./assets/svg/rss.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: 0.3s;
+}

@@ -72,6 +72,47 @@ header {
     -o-transition: all .5s ease-out 0.2s;
 }
 
+.lang {
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    display: flex;
+    justify-content: center;
+    margin: 0, auto;
+}
+
+.ru {
+    color: #5ddbe8;
+    margin-right: 10px;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.ru:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+.en {
+    color: #5ddbe8;
+    margin-left: 10px;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.en:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+.active {
+    font-size: 40px;
+    color: #F0ED81;
+}
+
+span {
+    color: #5ddbe8;
+    font-size: 40px;
+}
+
 .main-container {
     display: flex;
     flex-direction: column;
