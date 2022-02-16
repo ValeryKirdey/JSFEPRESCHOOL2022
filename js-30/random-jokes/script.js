@@ -3,30 +3,30 @@ const text = document.querySelector(".quote");
 import { quotes } from "./quotes.js";
 const ru = document.querySelector(".ru");
 const en = document.querySelector(".en");
-const url = 'https://api.whatdoestrumpthink.com/api/v1/quotes/random';
+const url = 'https://api.icndb.com/jokes/random';
 
-async function getQuote() {
-    try {
-        const response = await fetch(url)
-        if (!response.ok) {
-            throw Error(response.statusText)
-        }
-        const json = await response.json();
-        displayQuote(json.message);
-    } catch (err) {
-        console.log(err)
-        alert('Failed to fetch new quote');
-    }
-}
+// async function getQuote() {
+//     try {
+//         const response = await fetch(url)
+//         if (!response.ok) {
+//             throw Error(response.statusText)
+//         }
+//         const json = await response.json();
+//         displayQuote(json.message);
+//     } catch (err) {
+//         console.log(err)
+//         alert('Failed to fetch new quote');
+//     }
+// }
 
-function displayQuote(quote) {
-    const quoteText = document.querySelector('.quote');
-    quoteText.textContent = quote;
-}
+// function displayQuote(quote) {
+//     const quoteText = document.querySelector('.quote');
+//     quoteText.textContent = quote;
+// }
 
 async function fetchHandler() {
     try {
-        const response = await fetch();
+        const response = await fetch(url);
         const data = await response.json();
         text.innerHTML = data.value.joke;
     } catch (error) {
@@ -49,7 +49,7 @@ ru.addEventListener("click", () => {
 });
 
 en.addEventListener("click", () => {
-    getQuote();
+    fetchHandler();;
     ru.classList.remove("active");
     en.classList.add("active");
     new Audio("./assets/audio/Burp-A1-www.fesliyanstudios.com.mp3").play();
@@ -59,8 +59,10 @@ button.addEventListener("click", () => {
     if (ru.classList[1]) {
         updateRusText();
     } else {
-        getQuote();
+        fetchHandler();;
     }
 
     new Audio("./assets/audio/Burp-A1-www.fesliyanstudios.com.mp3").play();
 });
+
+fetchHandler();
