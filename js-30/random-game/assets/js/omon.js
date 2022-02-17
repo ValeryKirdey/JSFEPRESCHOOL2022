@@ -1,12 +1,11 @@
-import { getAssetProp, setAssetProp, incrementAssetProp } from "./updateLevel.js"
+import { getAssetProp, setAssetProp, incrementAssetProp } from "./level.js"
 
-let speed = .05 // determines ratio for obstacle speed increase
-let obstacleIntervalMin = 750 // sets min distance between obstacles
-let obstacleIntervalMax = 2000 // sets max distance between obstacles
-let nextObstacleTime // tracks distance value for each instance of an obstacle for obstacle creation
+let speed = .05
+let obstacleIntervalMin = 750
+let obstacleIntervalMax = 2000
+let nextObstacleTime
 let world = document.querySelector(".world")
 
-// starts first obstacle and removes all obstacles left over from previous game
 export function setUpObstacle() {
     nextObstacleTime = obstacleIntervalMin
     document.querySelectorAll(".obstacle").forEach(obstacle => {
@@ -14,7 +13,6 @@ export function setUpObstacle() {
     })
 }
 
-// handles new obstacle creation
 function createObstacle() {
     let obstacle = document.createElement("img")
     obstacle.src = "./assets/img/trush.png"
@@ -23,12 +21,10 @@ function createObstacle() {
     world.append(obstacle)
 }
 
-// handles randomization between obstacle creation times for use in moveObstacle function
 function randomNumberBetween(min, max) {
     return Math.floor(Math.random() * (max - min) + min)
 }
 
-// handles obstacle movement and time between new obstacle creation
 export function moveObstacle(currentFrame, gameSpeed) {
     document.querySelectorAll(".obstacle").forEach(obstacle => {
         incrementAssetProp(obstacle, "--left", gameSpeed * currentFrame * speed * -1)
@@ -45,7 +41,6 @@ export function moveObstacle(currentFrame, gameSpeed) {
     nextObstacleTime -= currentFrame
 }
 
-// defines obstacle element's outline for collision check
 export function getObstacleHitBox() {
     return [...document.querySelectorAll(".obstacle")].map(obstacle => {
         return obstacle.getBoundingClientRect()
