@@ -11,11 +11,12 @@ let currentFrame
 let gameSpeed
 let gameRateIncrease = .00001
 let startSpeed = 100
+    // let hs = localStorage.getItem("highestScore")
+let scoreHigh
 let score
 let startScreen = document.querySelector(".start-screen")
-    // let endScreen = document.querySelector(".end-screen")
 let scoreText = document.querySelector(".score")
-
+let scoreTextHigh = document.querySelector(".score1")
 
 function startGame(e) {
     if (e.code !== "Space") {
@@ -30,8 +31,8 @@ function startGame(e) {
     setUpClouds()
     gameSpeed = 1.25
     score = 0
+    scoreHigh = 0
     startScreen.remove()
-        // endScreen.remove()
     window.requestAnimationFrame(update)
 }
 
@@ -63,8 +64,17 @@ function increaseGameSpeed(currentTime) {
 
 function updateScore(currentFrame) {
     score += currentFrame * .01
-    scoreText.textContent = "Score: " + Math.floor(score)
+    scoreText.textContent = "Лепшы Вынiк: " + Math.floor(scoreHigh)
+    scoreTextHigh.textContent = "Рахунак: " + Math.floor(score)
+    if (score > scoreHigh) {
+        scoreHigh = score
+    }
 }
+scoreHigh = localStorage.setItem("myKey", score)
+localStorage.getItem("myKey")
+console.log(scoreText)
+
+
 
 function checkCollision(asset1, asset2) {
     return (
@@ -87,6 +97,19 @@ function loseGame() {
         document.addEventListener("keydown", startGame, { once: true })
     }, 100)
 }
+
+// saveGame = function(id) {
+//     let file = {
+//         score: 110,
+
+//     };
+//     localStorage.setItem(`saveGame${id}`, JSON.stringify(file));
+// };
+
+// loadGame = function(id) {
+//     var file = JSON.parse(localStorage.getItem('saveGame'));
+//     let score = file.score;
+// };
 // let gameOvers = false;
 
 // function loop() {
@@ -119,31 +142,5 @@ function loseGame() {
 // btn === null || btn === void 0 ? void 0 : btn.addEventListener("click", () => {
 //     location.reload();
 // });
-// "use strict"
-// (function(namespace) {
-//     var SCORE_FACTOR = 0.1;
 
-//     function formatOffset(offset) {
-//         // TODO pad with zeroes
-//         return Math.floor(offset * SCORE_FACTOR);
-//     }
-
-//     function ScoreBoard(options) {
-//         this.scale = options.scale;
-//         this.x = options.left;
-//         this.y = options.bottom;
-//         this.colour = options.colour;
-//     }
-
-//     ScoreBoard.prototype = Object.create(GameObject.prototype);
-//     ScoreBoard.prototype.constructor = ScoreBoard;
-
-//     ScoreBoard.prototype.draw = function(context, offset) {
-//         context.fillStyle = this.colour;
-//         context.font = "16px Courier";
-//         context.textAlign = "right";
-//         context.fillText(formatOffset(offset), this.x, this.y);
-//     };
-
-//     namespace.ScoreBoard = ScoreBoard;
-// })(window);
+console.log("Мне пока не хватает знаний, чтоб реализовать весь задуманный функционал данной игры, надеюсь, что к концу курса, я смогу 'допилить' данную игру!:)")

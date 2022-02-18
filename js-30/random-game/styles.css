@@ -1,5 +1,6 @@
 * {
     user-select: none;
+    color: white;
 }
 
 body {
@@ -28,6 +29,15 @@ body {
     z-index: 1;
 }
 
+.score1 {
+    position: absolute;
+    right: 2%;
+    top: 6%;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.25em;
+    z-index: 1;
+}
+
 .start-screen {
     position: absolute;
     text-align: center;
@@ -37,7 +47,6 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: 'Press Start 2P', cursive;
-    color: white;
     z-index: 1;
 }
 
@@ -45,7 +54,12 @@ body {
     color: red;
 }
 
+.end-game {
+    display: none;
+}
+
 .end-screen {
+    display: block;
     position: absolute;
     text-align: center;
     font-size: 1.75em;
@@ -67,7 +81,7 @@ body {
 .zmagar {
     position: absolute;
     --bottom: 20;
-    bottom: calc(var(--bottom) * 0.55%);
+    bottom: calc(var(--bottom) * 0.5%);
     left: 2%;
     z-index: 1;
     height: 25%;
@@ -76,7 +90,7 @@ body {
 .obstacle {
     position: absolute;
     left: calc(var(--left) * 1%);
-    bottom: 10%;
+    bottom: 9%;
     height: 20%;
     z-index: 1;
 }
@@ -124,10 +138,12 @@ body {
 }
 
 .rss-logo {
-    width: 70px;
+    /* width: 70px;
     height: 25px;
     background-image: url("./assets/svg/rss.svg");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: contain; */
+    text-decoration: none;
+    color: white;
     transition: 0.3s;
 }

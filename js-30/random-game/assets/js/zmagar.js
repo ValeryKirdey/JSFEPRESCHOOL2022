@@ -1,6 +1,7 @@
 import { incrementAssetProp, getAssetProp, setAssetProp } from "./level.js"
 
 let zmagar = document.querySelector(".zmagar")
+let endScreen = document.querySelector(".end-game")
 let jumpSpeed = .45
 let gravity = .0015
 let yVelocity
@@ -21,6 +22,7 @@ export function startZmagar() {
     setAssetProp(zmagar, "--bottom", 20)
     document.removeEventListener("keydown", onJump)
     document.addEventListener("keydown", onJump)
+    endScreen.classList.remove("end-screen");
 }
 
 export function moveZmagar(startSpeed, currentTime) {
@@ -92,4 +94,5 @@ export function getZmagarHitBox() {
 
 export function zmagarHit() {
     zmagar.src = "./assets/img/zmagar.png"
+    endScreen.classList.add("end-screen");
 }
