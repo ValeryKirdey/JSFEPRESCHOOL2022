@@ -1,13 +1,13 @@
-import { incrementAssetProp, getAssetProp, setAssetProp } from "./updateLevel.js"
+import { incrementAssetProp, getAssetProp, setAssetProp } from "./level.js"
 
 let zmagar = document.querySelector(".zmagar")
-let jumpSpeed = .45 // sets vertical jump speed
-let gravity = .0015 // sets vertical fall speed
-let yVelocity // sets vertical movement up on jump
-let isJumping // determines whether Zmagar is actively jumping
-let currentImage = 0 // initializes running animation frame
+let endScreen = document.querySelector(".end-game")
+let jumpSpeed = .45
+let gravity = .0015
+let yVelocity
+let isJumping
+let currentImage = 0
 
-// contains assets for Zmagar running animation
 let zmagarRunningFrames = [
     "./assets/img/zmagar/zmagar_1.png",
     "./assets/img/zmagar/zmagar_2.png",
@@ -16,22 +16,20 @@ let zmagarRunningFrames = [
     "./assets/img/zmagar/zmagar_5.png",
 ]
 
-// handles initial Zmagar behavior at start and restart
 export function startZmagar() {
     isJumping = false
     yVelocity = 0
     setAssetProp(zmagar, "--bottom", 20)
     document.removeEventListener("keydown", onJump)
     document.addEventListener("keydown", onJump)
+    endScreen.classList.remove("end-screen");
 }
 
-// handles seperate Zmagar behaviors during game
 export function moveZmagar(startSpeed, currentTime) {
     cycleRun(startSpeed)
     jumpZmagar(currentTime)
 }
 
-// handles Zmagar running animation
 export async function cycleRun(interval) {
     if (isJumping) return
     if (currentImage < zmagarRunningFrames.length - 1) {
@@ -68,7 +66,6 @@ export async function cycleRun(interval) {
     zmagar.src = zmagarRunningFrames[currentImage]
 }
 
-// handles Zmagar vertical movement behavior on jump
 function jumpZmagar(currentFrame) {
     if (!isJumping) return
 
@@ -82,7 +79,6 @@ function jumpZmagar(currentFrame) {
     yVelocity -= gravity * currentFrame
 }
 
-// handles Zmagar appearance and determines variable value on jump
 function onJump(e) {
     if (isJumping || e.code !== "Space") return
 
@@ -92,12 +88,11 @@ function onJump(e) {
     isJumping = true
 }
 
-// defines Zmagar element's outline for collision check
 export function getZmagarHitBox() {
     return zmagar.getBoundingClientRect()
 }
 
-// changes Zmagar's appearance on lose
 export function zmagarHit() {
     zmagar.src = "./assets/img/zmagar.png"
+    endScreen.classList.add("end-screen");
 }
