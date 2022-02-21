@@ -53,11 +53,6 @@ export async function cycleRun(interval) {
                 currentImage = 4
             }, interval)
         }
-        if (currentImage === 4) {
-            await setTimeout(function() {
-                currentImage = 5
-            }, interval)
-        }
     } else {
         await setTimeout(function() {
             currentImage = 0

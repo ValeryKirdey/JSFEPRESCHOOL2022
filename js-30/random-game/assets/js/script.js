@@ -72,7 +72,7 @@ function updateScore(currentFrame) {
 }
 scoreHigh = localStorage.setItem("myKey", score)
 localStorage.getItem("myKey")
-console.log(scoreText)
+    // console.log(scoreTextHigh)
 
 
 
@@ -98,49 +98,5 @@ function loseGame() {
     }, 100)
 }
 
-// saveGame = function(id) {
-//     let file = {
-//         score: 110,
-
-//     };
-//     localStorage.setItem(`saveGame${id}`, JSON.stringify(file));
-// };
-
-// loadGame = function(id) {
-//     var file = JSON.parse(localStorage.getItem('saveGame'));
-//     let score = file.score;
-// };
-// let gameOvers = false;
-
-// function loop() {
-//     if (gameOvers === false && gamePaused == false) {
-//         if (game.lives === 0) {
-//             var cv = localStorage.getItem("highestScore");
-//             if (!cv) {
-//                 localStorage.setItem("highestScore", game.score.toString());
-//             } else {
-//                 if (parseInt(cv) > game.score) {} else if (parseInt(cv) < game.score) {
-//                     localStorage.removeItem("highestScore");
-//                     localStorage.setItem("highestScore", game.score.toString());
-//                 }
-//             }
-//             gameOvers = true;
-//         }
-//     }
-// }
-
-// let highestScore = localStorage.getItem("highestScore");
-// let btn = document.getElementById("resume");
-// let currentScore = document.getElementById("score");
-// let highestScores = document.getElementById("score2");
-// if (!highestScore) {
-//     highestScore = "0";
-// }
-// currentScore.textContent = "CURRENT SCORE : " + game.score;
-// highestScores.textContent = "HIGHEST SCORE : " + highestScore;
-// popup.style.display = "block";
-// btn === null || btn === void 0 ? void 0 : btn.addEventListener("click", () => {
-//     location.reload();
-// });
 
 console.log("Мне пока не хватает знаний, чтоб реализовать весь задуманный функционал данной игры, надеюсь, что к концу курса, я смогу 'допилить' данную игру!:)")
