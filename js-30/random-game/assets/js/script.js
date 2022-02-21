@@ -98,36 +98,5 @@ function loseGame() {
     }, 100)
 }
 
-// saveGame = function(id) {
-//     let file = {
-//         score: 110,
-
-//     };
-//     localStorage.setItem(`saveGame${id}`, JSON.stringify(file));
-// };
-
-// loadGame = function(id) {
-//     var file = JSON.parse(localStorage.getItem('saveGame'));
-//     let score = file.score;
-// };
-// let gameOvers = false;
-
-// function loop() {
-//     if (gameOvers === false && gamePaused == false) {
-//         if (game.lives === 0) {
-//             var cv = localStorage.getItem("highestScore");
-//             if (!cv) {
-//                 localStorage.setItem("highestScore", game.score.toString());
-//             } else {
-//                 if (parseInt(cv) > game.score) {} else if (parseInt(cv) < game.score) {
-//                     localStorage.removeItem("highestScore");
-//                     localStorage.setItem("highestScore", game.score.toString());
-//                 }
-//             }
-//             gameOvers = true;
-//         }
-//     }
-// }
-
 
 console.log("Мне пока не хватает знаний, чтоб реализовать весь задуманный функционал данной игры, надеюсь, что к концу курса, я смогу 'допилить' данную игру!:)")
