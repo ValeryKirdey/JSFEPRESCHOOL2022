@@ -72,7 +72,7 @@ function updateScore(currentFrame) {
 }
 scoreHigh = localStorage.setItem("myKey", score)
 localStorage.getItem("myKey")
-console.log(scoreText)
+    // console.log(scoreTextHigh)
 
 
 
@@ -129,18 +129,5 @@ function loseGame() {
 //     }
 // }
 
-// let highestScore = localStorage.getItem("highestScore");
-// let btn = document.getElementById("resume");
-// let currentScore = document.getElementById("score");
-// let highestScores = document.getElementById("score2");
-// if (!highestScore) {
-//     highestScore = "0";
-// }
-// currentScore.textContent = "CURRENT SCORE : " + game.score;
-// highestScores.textContent = "HIGHEST SCORE : " + highestScore;
-// popup.style.display = "block";
-// btn === null || btn === void 0 ? void 0 : btn.addEventListener("click", () => {
-//     location.reload();
-// });
 
 console.log("Мне пока не хватает знаний, чтоб реализовать весь задуманный функционал данной игры, надеюсь, что к концу курса, я смогу 'допилить' данную игру!:)")
